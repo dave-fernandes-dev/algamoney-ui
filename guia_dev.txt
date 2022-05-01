@@ -1,0 +1,3 @@
+// cria o projeto
+npx -p @angular/cli@v12-lts ng new algamoney-ui
+
