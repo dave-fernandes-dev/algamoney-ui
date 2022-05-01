@@ -1,3 +1,16 @@
 // cria o projeto
 npx -p @angular/cli@v12-lts ng new algamoney-ui
 
+//instala primeng
+npm install primeng@12.2.3 --save
+npm install primeicons --save
+npm install @angular/animations@v12-lts --save
+npm install primeflex --save
+
+10.3. Criando o projeto do curso e instalando o PrimeNG
+
+//font awesome
+npm install font-awesome --save
+
+//rodar usando angular do projeto
+npx ng serve -o
