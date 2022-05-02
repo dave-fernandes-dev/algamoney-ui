@@ -5,6 +5,8 @@
     "ms-vscode.vscode-typescript-tslint-plugin",
     "esbenp.prettier-vscode",
     "firsttris.vscode-jest-runner",
-    "pucelle.vscode-css-navigation"
+    "pucelle.vscode-css-navigation",
+    "abusaidm.html-snippets",
+    "steoates.autoimport"
   ]
 }
