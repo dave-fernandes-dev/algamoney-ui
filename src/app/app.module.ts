@@ -8,6 +8,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { TabViewModule } from 'primeng/tabview';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { ButtonModule } from 'primeng/button';
     TabViewModule,
     InputTextModule,
     ButtonModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

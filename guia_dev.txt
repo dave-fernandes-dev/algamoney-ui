@@ -5,6 +5,7 @@ npx -p @angular/cli@v12-lts ng new algamoney-ui
 npm install primeng@12.2.3 --save
 npm install primeicons --save
 npm install @angular/animations@v12-lts --save
+npm install @angular/cdk@v12-lts --save
 npm install primeflex --save
 
 10.3. Criando o projeto do curso e instalando o PrimeNG

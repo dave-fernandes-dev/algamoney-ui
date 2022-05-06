@@ -7,6 +7,13 @@
     "firsttris.vscode-jest-runner",
     "pucelle.vscode-css-navigation",
     "abusaidm.html-snippets",
-    "steoates.autoimport"
+    "steoates.autoimport",
+    "johnpapa.angular2",
+    "formulahendry.auto-rename-tag",
+    "formulahendry.auto-close-tag",
+    "quicktype.quicktype",
+    "editorconfig.editorconfig",
+    "simontest.simontest",
+    "loiane.angular-extension-pack"
   ]
 }
