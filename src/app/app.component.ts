@@ -24,4 +24,7 @@ export class AppComponent {
       dataPagamento: null, valor: 180, pessoa: 'Academia Top' }
   ];
 
+  dataVencimento!: string;
+  dataPagamento!: Date;
+
 }

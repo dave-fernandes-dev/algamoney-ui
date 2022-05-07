@@ -10,6 +10,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import {TooltipModule} from 'primeng/tooltip';
+import {CalendarModule} from 'primeng/calendar';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,8 @@ import {TooltipModule} from 'primeng/tooltip';
     InputTextModule,
     ButtonModule,
     TableModule,
-    TooltipModule
+    TooltipModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
