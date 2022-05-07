@@ -11,9 +11,10 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import {TooltipModule} from 'primeng/tooltip';
 import {CalendarModule} from 'primeng/calendar';
+import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LancamentosPesquisaComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
