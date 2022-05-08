@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './lancamentos-pesquisa.component.html',
   styleUrls: ['./lancamentos-pesquisa.component.scss']
 })
-export class LancamentosPesquisaComponent  {
+export class LancamentosPesquisaComponent implements OnInit {
 
   lancamentos = [
     { tipo: 'DESPESA', descricao: 'Compra de pão', dataVencimento: '30/06/2017',
@@ -24,8 +24,9 @@ export class LancamentosPesquisaComponent  {
       dataPagamento: null, valor: 180, pessoa: 'Academia Top' }
   ];
 
-  dataVencimento!: string;
-  dataPagamento!: Date;
 
+  constructor() { /* TODO document why this constructor is empty */  }
+
+  ngOnInit(): void {   /* TODO document why this method 'ngOnInit' is empty */  }
 
 }
