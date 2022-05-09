@@ -9,9 +9,8 @@ export class NavbarComponent implements OnInit {
 
   exibindoMenu = false;
 
-  constructor() { }
+  constructor() { /* TODO document why this constructor is empty */  }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {   /* TODO document why this method 'ngOnInit' is empty */ }
 
 }
