@@ -28,8 +28,8 @@
       <ng-template pTemplate="body" let-pessoa>
         <tr>
           <td>{{ pessoa.nome }}</td>
-          <td>{{ pessoa.cidade }}</td>
-          <td>{{ pessoa.estado }}</td>
+          <td>{{ pessoa.cidade | uppercase }}</td>
+          <td>{{ pessoa.estado  | lowercase}}</td>
           <td class="font-bold" >
 
               <a href="#" [pTooltip]="pessoa.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top" [ngStyle]="{ color: pessoa.ativo === true ? 'green' : 'red'}">
