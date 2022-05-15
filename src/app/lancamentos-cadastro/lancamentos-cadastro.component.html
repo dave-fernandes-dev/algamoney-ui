@@ -1,0 +1,50 @@
+<div class="container font-bold">
+  <form>
+    <div class="grid p-fluid">
+      <div class="col-12">
+        <h2>Novo Lançamento</h2>
+      </div>
+
+      <div class="col-12 md:col-3">
+        <label>Vencimento</label>
+        <input type="text" pInputText />
+      </div>
+
+      <div class="col-12 md:col-3">
+        <label>Recebimento</label>
+        <input type="text" pInputText />
+      </div>
+
+      <div class="col-12 md:col-10">
+        <label>Descrição</label>
+        <input type="text" pInputText />
+      </div>
+
+      <div class="col-12 md:col-2">
+        <label>Valor</label>
+        <input type="text" pInputText placeholder="0,00" />
+      </div>
+
+      <div class="col-12 md:col-6">
+        <label>Categoria</label>
+        <input type="text" pInputText />
+      </div>
+
+      <div class="col-12 md:col-6">
+        <label>Pessoa</label>
+        <input type="text" pInputText />
+      </div>
+
+      <div class="col-12">
+        <label>Observação</label>
+        <textarea [rows]="3" pInputTextarea [autoResize]="true"></textarea>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button pButton type="button" label="Salvar"></button>
+      <button pButton type="button" label="Novo" class="p-button-info"></button>
+      <p-button label="Voltar para a Pesquisa" styleClass="p-button-link"></p-button>
+    </div>
+  </form>
+</div>
