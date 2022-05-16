@@ -21,9 +21,17 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { PessoasCadastroComponent } from './pessoas-cadastro/pessoas-cadastro.component';
+import { InputMaskModule } from 'primeng/inputmask';
 
 @NgModule({
-  declarations: [AppComponent, LancamentosPesquisaComponent, NavbarComponent, PessoasPesquisaComponent, LancamentosCadastroComponent, PessoasCadastroComponent],
+  declarations: [
+    AppComponent,
+    LancamentosPesquisaComponent,
+    NavbarComponent,
+    PessoasPesquisaComponent,
+    LancamentosCadastroComponent,
+    PessoasCadastroComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -40,6 +48,7 @@ import { PessoasCadastroComponent } from './pessoas-cadastro/pessoas-cadastro.co
     SelectButtonModule,
     DropdownModule,
     InputNumberModule,
+    InputMaskModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
