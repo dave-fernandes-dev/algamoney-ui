@@ -17,6 +17,7 @@ import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.co
 import { FormsModule } from '@angular/forms';
 import { LancamentosCadastroComponent } from './lancamentos-cadastro/lancamentos-cadastro.component';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import {SelectButtonModule} from 'primeng/selectbutton';
 
 @NgModule({
   declarations: [AppComponent, LancamentosPesquisaComponent, NavbarComponent, PessoasPesquisaComponent, LancamentosCadastroComponent],
@@ -33,6 +34,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     CalendarModule,
     FormsModule,
     InputTextareaModule,
+    SelectButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

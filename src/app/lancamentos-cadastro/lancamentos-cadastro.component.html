@@ -1,41 +1,46 @@
 <div class="container font-bold">
   <form>
-    <div class="grid p-fluid">
+    <div class="grid">
       <div class="col-12">
         <h2>Novo Lançamento</h2>
       </div>
 
-      <div class="col-12 md:col-3">
+    <div class="col-12 md:col-12">
+      <p-selectButton [options]="tipos" #tipo></p-selectButton>
+    </div>
+
+
+      <div class="col-12 md:col-3 p-fluid">
         <label>Vencimento</label>
         <p-calendar dateFormat="dd/mm/yy" [showIcon]="true"  placeholder="dd/MM/yyyy"></p-calendar>
       </div>
 
-      <div class="col-12 md:col-3">
-        <label>Recebimento</label>
+      <div class="col-12 md:col-3 p-fluid">
+        <label>{{ tipo.value === "RECEITA" ? "Recebimento" : "Pagamento" }}</label>
         <p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/MM/yyyy"></p-calendar>
       </div>
 
-      <div class="col-12 md:col-10">
+      <div class="col-12 md:col-10 p-fluid">
         <label>Descrição</label>
         <input type="text" pInputText />
       </div>
 
-      <div class="col-12 md:col-2">
+      <div class="col-12 md:col-2 p-fluid">
         <label>Valor</label>
         <input type="text" pInputText placeholder="0,00" />
       </div>
 
-      <div class="col-12 md:col-6">
+      <div class="col-12 md:col-6 p-fluid">
         <label>Categoria</label>
         <input type="text" pInputText />
       </div>
 
-      <div class="col-12 md:col-6">
+      <div class="col-12 md:col-6 p-fluid">
         <label>Pessoa</label>
         <input type="text" pInputText />
       </div>
 
-      <div class="col-12">
+      <div class="col-12 p-fluid">
         <label>Observação</label>
         <textarea [rows]="3" pInputTextarea [autoResize]="true"></textarea>
       </div>
