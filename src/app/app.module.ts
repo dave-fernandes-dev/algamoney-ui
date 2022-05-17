@@ -24,6 +24,7 @@ import { PessoasCadastroComponent } from './pessoas-cadastro/pessoas-cadastro.co
 import { InputMaskModule } from 'primeng/inputmask';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {MessageModule} from 'primeng/message';
     PessoasPesquisaComponent,
     LancamentosCadastroComponent,
     PessoasCadastroComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,5 +7,6 @@
         "primeng",
         "tabview",
         "Vencimento"
-    ]
+    ],
+    "angular.enable-strict-mode-prompt": false
 }
