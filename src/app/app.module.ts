@@ -22,6 +22,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { PessoasCadastroComponent } from './pessoas-cadastro/pessoas-cadastro.component';
 import { InputMaskModule } from 'primeng/inputmask';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,7 @@ import { InputMaskModule } from 'primeng/inputmask';
     DropdownModule,
     InputNumberModule,
     InputMaskModule,
+    MessagesModule, MessageModule
   ],
   providers: [],
   bootstrap: [AppComponent],
