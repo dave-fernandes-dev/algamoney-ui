@@ -23,7 +23,11 @@ export class LancamentosCadastroComponent implements OnInit {
     { label: 'Maria Abadia', value: '3' },
   ];
 
-  constructor() {}
+  constructor() {
+    // teste
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  // teste
+  }
 }

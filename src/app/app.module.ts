@@ -11,11 +11,9 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { CalendarModule } from 'primeng/calendar';
-import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
 import { FormsModule } from '@angular/forms';
-import { LancamentosCadastroComponent } from './lancamentos-cadastro/lancamentos-cadastro.component';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DropdownModule } from 'primeng/dropdown';
@@ -25,16 +23,16 @@ import { InputMaskModule } from 'primeng/inputmask';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import { MessageComponent } from './message/message.component';
+import { Message2Component } from './message/message2.component';
+import { LancamentosModule } from './lancamentos/lancamentos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LancamentosPesquisaComponent,
     NavbarComponent,
-    PessoasPesquisaComponent,
-    LancamentosCadastroComponent,
     PessoasCadastroComponent,
-    MessageComponent,
+    PessoasPesquisaComponent,
+    MessageComponent, Message2Component
   ],
   imports: [
     BrowserModule,
@@ -53,7 +51,9 @@ import { MessageComponent } from './message/message.component';
     DropdownModule,
     InputNumberModule,
     InputMaskModule,
-    MessagesModule, MessageModule
+    MessagesModule, MessageModule,
+
+    LancamentosModule
   ],
   providers: [],
   bootstrap: [AppComponent],
