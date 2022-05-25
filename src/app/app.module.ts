@@ -12,28 +12,22 @@ import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { CalendarModule } from 'primeng/calendar';
 import { NavbarComponent } from './navbar/navbar.component';
-import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
 import { FormsModule } from '@angular/forms';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
-import { PessoasCadastroComponent } from './pessoas-cadastro/pessoas-cadastro.component';
 import { InputMaskModule } from 'primeng/inputmask';
-import {MessagesModule} from 'primeng/messages';
-import {MessageModule} from 'primeng/message';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 import { MessageComponent } from './message/message.component';
 import { Message2Component } from './message/message2.component';
+
 import { LancamentosModule } from './lancamentos/lancamentos.module';
+import { PessoasModule } from './pessoas/pessoas.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    PessoasCadastroComponent,
-    PessoasPesquisaComponent,
-    MessageComponent, Message2Component
-  ],
+  declarations: [AppComponent, NavbarComponent, MessageComponent, Message2Component],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -51,9 +45,11 @@ import { LancamentosModule } from './lancamentos/lancamentos.module';
     DropdownModule,
     InputNumberModule,
     InputMaskModule,
-    MessagesModule, MessageModule,
+    MessagesModule,
+    MessageModule,
 
-    LancamentosModule
+    LancamentosModule,
+    PessoasModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
