@@ -11,8 +11,6 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { MessageModule } from 'primeng/message';
-import { MessagesModule } from 'primeng/messages';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TableModule } from 'primeng/table';
 import { TabViewModule } from 'primeng/tabview';
@@ -22,6 +20,7 @@ import { AppRoutingModule } from '../app-routing.module';
 
 import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
 import { LancamentosCadastroComponent } from './lancamentos-cadastro/lancamentos-cadastro.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [LancamentosPesquisaComponent, LancamentosCadastroComponent],
@@ -43,8 +42,9 @@ import { LancamentosCadastroComponent } from './lancamentos-cadastro/lancamentos
     DropdownModule,
     InputNumberModule,
     InputMaskModule,
-    MessagesModule,
-    MessageModule,
+
+    SharedModule
+
   ],
   exports: [LancamentosPesquisaComponent, LancamentosCadastroComponent]
 })

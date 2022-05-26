@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PessoasCadastroComponent } from './pessoas-cadastro/pessoas-cadastro.component';
-import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,13 +11,15 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { MessageModule } from 'primeng/message';
-import { MessagesModule } from 'primeng/messages';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TableModule } from 'primeng/table';
 import { TabViewModule } from 'primeng/tabview';
 import { TooltipModule } from 'primeng/tooltip';
 import { AppRoutingModule } from '../app-routing.module';
+
+import { PessoasCadastroComponent } from './pessoas-cadastro/pessoas-cadastro.component';
+import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [PessoasCadastroComponent, PessoasPesquisaComponent],
@@ -41,8 +41,8 @@ import { AppRoutingModule } from '../app-routing.module';
     DropdownModule,
     InputNumberModule,
     InputMaskModule,
-    MessagesModule,
-    MessageModule,
+
+    SharedModule
   ],
   exports: [PessoasCadastroComponent, PessoasPesquisaComponent],
 })

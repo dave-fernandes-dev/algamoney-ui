@@ -20,14 +20,13 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputMaskModule } from 'primeng/inputmask';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
-import { MessageComponent } from './message/message.component';
-import { Message2Component } from './message/message2.component';
+
 
 import { LancamentosModule } from './lancamentos/lancamentos.module';
 import { PessoasModule } from './pessoas/pessoas.module';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, MessageComponent, Message2Component],
+  declarations: [AppComponent, NavbarComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
