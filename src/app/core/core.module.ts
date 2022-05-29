@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LancamentosModule } from '../lancamentos/lancamentos.module';
+import { PessoasModule } from '../pessoas/pessoas.module';
 
 
 
 @NgModule({
   declarations: [NavbarComponent],
   imports: [
-    CommonModule
+    CommonModule,
+
+    LancamentosModule,
+    PessoasModule,
   ],
-  exports: [NavbarComponent]
+  exports: [NavbarComponent],
+  providers: [DatePipe]
 })
 export class CoreModule { }

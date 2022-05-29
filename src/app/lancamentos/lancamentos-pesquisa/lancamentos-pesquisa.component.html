@@ -14,10 +14,13 @@
 
   <div class="col-12">
     <label class="block">Vencimento</label>
+    <!--
     <input type="text" pInputText class="p-offset-3" style="width: 100px" />
+    -->
+    <p-calendar name="vencimentoInicio" [(ngModel)]="dataVencimentoInicio" dateFormat="dd/mm/yy" [showIcon]="true"  placeholder="__/__/____" [inputStyle]="{width: '106px'}"></p-calendar>
 
     <label style="margin: 10px">Até</label>
-    <input type="text" pInputText style="width: 100px" />
+    <p-calendar name="vencimentoFim" [(ngModel)]="dataVencimentoFim" dateFormat="dd/mm/yy" [showIcon]="true"  placeholder="__/__/____" [inputStyle]="{width: '106px'}"></p-calendar>
   </div>
 
   <div class="col-12">
@@ -25,7 +28,7 @@
   </div>
 
   <div class="col-12">
-    <p-table [value]="lancamentos" [paginator]="true" [rows]="2" [responsive]="true" [alwaysShowPaginator]="false" styleClass="p-datatable-gridlines p-datatable-striped">
+    <p-table [value]="lancamentos" [paginator]="true" [rows]="2" rowsPerPageOptions="2 5 9" [responsive]="true" [alwaysShowPaginator]="false" styleClass="p-datatable-gridlines p-datatable-striped">
       <ng-template pTemplate="header">
         <tr>
           <th>Pessoa</th>
@@ -46,6 +49,13 @@
           <td class="col-acoes">
             <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></a>
             <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="bottom"></button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="6">
+            Nenhum Registro encontrado
           </td>
         </tr>
       </ng-template>
