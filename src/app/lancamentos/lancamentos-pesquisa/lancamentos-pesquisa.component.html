@@ -7,20 +7,17 @@
 
   <div class="col-12 p-fluid">
     <span class="p-float-label">
-      <input id="float-input" type="text" pInputText class="p-inputtext-sm" name="descricao" [(ngModel)]="descricao" />
+      <input id="float-input" type="text" pInputText class="p-inputtext-sm" name="descricao" [(ngModel)]="filtro.descricao" />
       <label for="float-input">Descrição</label>
     </span>
   </div>
 
   <div class="col-12">
     <label class="block">Vencimento</label>
-    <!--
-    <input type="text" pInputText class="p-offset-3" style="width: 100px" />
-    -->
-    <p-calendar name="vencimentoInicio" [(ngModel)]="dataVencimentoInicio" dateFormat="dd/mm/yy" [showIcon]="true"  placeholder="__/__/____" [inputStyle]="{width: '106px'}"></p-calendar>
+    <p-calendar name="vencimentoInicio" [(ngModel)]="filtro.dataVencimentoInicio" dateFormat="dd/mm/yy" [showIcon]="true"  placeholder="__/__/____" [inputStyle]="{width: '106px'}"></p-calendar>
 
     <label style="margin: 10px">Até</label>
-    <p-calendar name="vencimentoFim" [(ngModel)]="dataVencimentoFim" dateFormat="dd/mm/yy" [showIcon]="true"  placeholder="__/__/____" [inputStyle]="{width: '106px'}"></p-calendar>
+    <p-calendar name="vencimentoFim" [(ngModel)]="filtro.dataVencimentoFim" dateFormat="dd/mm/yy" [showIcon]="true"  placeholder="__/__/____" [inputStyle]="{width: '106px'}"></p-calendar>
   </div>
 
   <div class="col-12">
@@ -55,7 +52,7 @@
       <ng-template pTemplate="emptymessage">
         <tr>
           <td colspan="6">
-            Nenhum Registro encontrado
+            Nenhum Registro Encontrado
           </td>
         </tr>
       </ng-template>

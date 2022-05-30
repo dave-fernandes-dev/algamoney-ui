@@ -8,9 +8,7 @@ import { LancamentoService, LancamentoFiltro } from '../lancamento.service';
 })
 export class LancamentosPesquisaComponent implements OnInit {
 
-  descricao!: string;
-  dataVencimentoInicio!: Date;
-  dataVencimentoFim!: Date;
+  filtro = new LancamentoFiltro();
   lancamentos: any[] = [];
   // ou lancamentos = [] ;
 
@@ -22,13 +20,7 @@ export class LancamentosPesquisaComponent implements OnInit {
 
   pesquisar(): void {
 
-    const filtro: LancamentoFiltro = {
-      descricao : this.descricao,
-      dataVencimentoInicio : this.dataVencimentoInicio,
-      dataVencimentoFim : this.dataVencimentoFim
-    }
-
-    this.lancamentoService.pesquisarComFiltro(filtro)
+    this.lancamentoService.pesquisarComFiltro(this.filtro)
     .then(lancamentos => (this.lancamentos = lancamentos));
   }
 }
