@@ -28,6 +28,8 @@ export class LancamentosPesquisaComponent  {
   }
 
   aoMudarPagina(event: LazyLoadEvent) {
+    //console.log(event)
+    this.filtro.itensPorPagina = event.rows!;
     const pagina = event.first!/event.rows!;
     this.pesquisar(pagina);
   }

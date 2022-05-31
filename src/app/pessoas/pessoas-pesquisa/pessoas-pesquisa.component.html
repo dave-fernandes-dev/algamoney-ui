@@ -1,3 +1,5 @@
+<form autocomplete="off" (ngSubmit)="pesquisar()">
+
 <div class="container grid font-bold">
   <div class="col-12">
     <h2>Pessoas</h2>
@@ -16,6 +18,12 @@
 
   <div class="col-12">
     <p-table [value]="pessoas" [paginator]="true" [rows]="2" [responsive]="true" styleClass="p-datatable-gridlines p-datatable-striped">
+
+<!--
+      versãp paginada mas precisa adptar o backend
+      <p-table [value]="pessoas" [responsive]="true" [alwaysShowPaginator]="true" styleClass="p-datatable-gridlines p-datatable-striped"
+      [paginator]="true" [rows]="filtro.itensPorPagina" [rowsPerPageOptions]="[2, 5, 10, 20, 100]" lazy="true" [totalRecords]="totalRegistros" (onLazyLoad)="aoMudarPagina($event)">
+-->
       <ng-template pTemplate="header">
         <tr>
           <th>Nome</th>
@@ -50,5 +58,7 @@
   </div>
 
 </div>
+
+</form>
 
 
