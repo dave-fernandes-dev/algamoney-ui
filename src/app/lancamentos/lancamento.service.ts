@@ -37,10 +37,10 @@ export class LancamentoService {
 
     const headers = new HttpHeaders().append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
 
-    let params = new HttpParams();
-
-    params.set('page', filtro.pagina);
-    params.set('size', filtro.itensPorPagina);
+    //muita atenção  neste "set"  pq    params.set('page', filtro.pagina) NÃO FUNCIONA!
+    let params = new HttpParams()
+                      .set('page', filtro.pagina)
+                      .set('size', filtro.itensPorPagina);
 
     if (filtro.descricao) {
       //Precisamos atribuir o resultado do método "set" novamente à variável "params"
@@ -56,8 +56,14 @@ export class LancamentoService {
     }
 
   return this.http.get(`${this.lancamentosUrl}?resumo`, { headers, params })
-      .toPromise()
-      .then((response: any) => response['content']);
+    .toPromise()
+      .then((response: any) => {
+
+        const lancamentos = response['content'];
+        const total = response['totalElements'];
+
+        return {lancamentos, total};
+      });
   }
 
 

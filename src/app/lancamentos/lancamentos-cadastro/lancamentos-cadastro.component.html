@@ -27,10 +27,6 @@
         <app-message [control]="descricao" error="required" text="Informe uma Descrição"></app-message>
         <app-message [control]="descricao" error="minlength" text="Mínimo de {{ descricao.errors?.minlength?.requiredLength }} caracteres. Você digitou apenas {{ descricao.errors?.minlength?.actualLength }}"></app-message>
 
-        <!--
-        <app-message2 [control]="descricao"></app-message2>
-        -->
-
       </div>
 
       <div class="col-12 md:col-2 p-fluid">
