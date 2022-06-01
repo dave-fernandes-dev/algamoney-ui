@@ -47,7 +47,7 @@
           <td class="col-valor-content" [ngStyle]="{ color: lancamento.tipo === 'DESPESA' ? 'red' : 'blue'}">{{lancamento.valor | currency:'BRL':true:'1.2-2'}}</td>
           <td class="col-acoes">
             <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></a>
-            <button pButton icon="pi pi-trash" pTooltip="Excluir" (click)="excluir(lancamento)" tooltipPosition="bottom"></button>
+            <button pButton icon="pi pi-trash" pTooltip="Excluir" (click)="confirmarExclusao(lancamento)" tooltipPosition="bottom"></button>
           </td>
         </tr>
       </ng-template>
