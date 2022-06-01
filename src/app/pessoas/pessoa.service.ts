@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export class PessoaFiltro{
-  nome!: string;
+  nome?: string;
   pagina = 0;
   itensPorPagina = 5;
 }
@@ -16,17 +16,6 @@ export class PessoaService {
 
 
   constructor(private http: HttpClient) {}
-
-  pesquisar(): Promise<any> {
-
-    const headers = new HttpHeaders().append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
-
-    return this.http
-      .get(`${this.pessoasUrl}?resumo`, { headers }) // ou  { headers: headers }
-      .toPromise()
-      .then((response: any) => response['content']);
-  }
-
 
   pesquisarComFiltro(filtro: PessoaFiltro): Promise<any> {
 
@@ -42,15 +31,24 @@ export class PessoaService {
       params = params.set('nome', filtro.nome);
     }
 
-  return this.http.get(`${this.pessoasUrl}?resumo`, { headers, params })
+  return this.http.get(`${this.pessoasUrl}?paginado`, { headers, params })
     .toPromise()
       .then((response: any) => {
 
-        const contents = response['content'];
+        const pessoas = response['content'];
         const total = response['totalElements'];
 
-        return {contents, total};
+        return {pessoas, total};
       });
+  }
+
+  listarTodas() : Promise<any> {
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+
+    return this.http.get(this.pessoasUrl, { headers })
+      .toPromise()
+      .then((response: any) => response['content']);
   }
 
 

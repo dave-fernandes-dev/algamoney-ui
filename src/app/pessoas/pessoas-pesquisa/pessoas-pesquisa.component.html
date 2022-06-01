@@ -7,7 +7,7 @@
 
   <div class="col-12 p-fluid">
     <span class="p-float-label">
-      <input id="float-input" type="text" pInputText class="p-inputtext-sm" />
+      <input id="float-input" type="text" pInputText class="p-inputtext-sm" name="nome" [(ngModel)]="filtro.nome"/>
       <label for="float-input">Nome</label>
     </span>
   </div>
@@ -17,13 +17,9 @@
   </div>
 
   <div class="col-12">
-    <p-table [value]="pessoas" [paginator]="true" [rows]="2" [responsive]="true" styleClass="p-datatable-gridlines p-datatable-striped">
+    <p-table [value]="pessoas" [responsive]="true" [alwaysShowPaginator]="true" styleClass="p-datatable-gridlines p-datatable-striped"
+    [paginator]="true" [rows]="filtro.itensPorPagina" [rowsPerPageOptions]="[2, 5, 10, 20, 100]" lazy="true" [totalRecords]="totalRegistros" (onLazyLoad)="aoMudarPagina($event)">
 
-<!--
-      versãp paginada mas precisa adptar o backend
-      <p-table [value]="pessoas" [responsive]="true" [alwaysShowPaginator]="true" styleClass="p-datatable-gridlines p-datatable-striped"
-      [paginator]="true" [rows]="filtro.itensPorPagina" [rowsPerPageOptions]="[2, 5, 10, 20, 100]" lazy="true" [totalRecords]="totalRegistros" (onLazyLoad)="aoMudarPagina($event)">
--->
       <ng-template pTemplate="header">
         <tr>
           <th>Nome</th>
@@ -36,8 +32,8 @@
       <ng-template pTemplate="body" let-pessoa>
         <tr>
           <td>{{ pessoa.nome }}</td>
-          <td>{{ pessoa.cidade | uppercase }}</td>
-          <td>{{ pessoa.estado  | lowercase}}</td>
+          <td>{{ pessoa.endereco.cidade | lowercase }}</td>
+          <td>{{ pessoa.endereco.estado  | uppercase}}</td>
           <td class="font-bold" >
 
               <a href="#" [pTooltip]="pessoa.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top" [ngStyle]="{ color: pessoa.ativo === true ? 'green' : 'red'}">
