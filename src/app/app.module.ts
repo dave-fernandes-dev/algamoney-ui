@@ -20,6 +20,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputMaskModule } from 'primeng/inputmask';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 import { LancamentosModule } from './lancamentos/lancamentos.module';
 import { PessoasModule } from './pessoas/pessoas.module';
@@ -47,6 +49,8 @@ import { CoreModule } from './core/core.module';
     MessagesModule,
     MessageModule,
     HttpClientModule,
+    ToastModule,
+
 
 
     LancamentosModule,
@@ -54,7 +58,7 @@ import { CoreModule } from './core/core.module';
 
     CoreModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
