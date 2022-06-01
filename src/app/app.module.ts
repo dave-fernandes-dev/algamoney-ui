@@ -24,9 +24,14 @@ import { MessageService, ConfirmationService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+
 import { LancamentosModule } from './lancamentos/lancamentos.module';
 import { PessoasModule } from './pessoas/pessoas.module';
 import { CoreModule } from './core/core.module';
+
+registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [AppComponent],
@@ -58,7 +63,11 @@ import { CoreModule } from './core/core.module';
 
     CoreModule,
   ],
-  providers: [MessageService, ConfirmationService],
+  providers: [
+      MessageService,
+      ConfirmationService,
+
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
