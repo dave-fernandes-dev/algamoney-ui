@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { ConfirmationService, LazyLoadEvent, MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
+import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 import { LancamentoService, LancamentoFiltro } from '../lancamento.service';
 
 @Component({
@@ -15,7 +16,11 @@ export class LancamentosPesquisaComponent  {
   lancamentos: any[] = [];
   @ViewChild('tabela') grid!: Table;
 
-  constructor(private lancamentoService: LancamentoService, private messageService: MessageService, private confirmation: ConfirmationService) {}
+  constructor(private lancamentoService: LancamentoService,
+              private messageService: MessageService,
+              private confirmation: ConfirmationService,
+              private errorHandler: ErrorHandlerService
+              ) {}
 
   pesquisar(pagina = 0) {
 
@@ -25,7 +30,8 @@ export class LancamentosPesquisaComponent  {
     .then(resultado => {
       this.totalRegistros = resultado.total;
       this.lancamentos = resultado.lancamentos;
-    });
+    })
+    .catch(erro => this.errorHandler.handle(erro));
   }
 
   aoMudarPagina(event: LazyLoadEvent) {
@@ -49,8 +55,8 @@ export class LancamentosPesquisaComponent  {
     this.lancamentoService.excluir(lancamento.id)
       .then(() => {
         this.grid.reset();
-      });
-
-      this.messageService.add({ severity: 'success', detail: 'Lançamento excluído com sucesso!' })
+        this.messageService.add({ severity: 'success', detail: 'Lançamento excluído com sucesso!' })
+      })
+      .catch(erro => this.errorHandler.handle(erro));
   }
 }
