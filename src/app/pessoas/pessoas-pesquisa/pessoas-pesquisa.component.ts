@@ -48,11 +48,11 @@ export class PessoasPesquisaComponent {
   }
 
 
-  excluir(lancamento: any) {
-    this.pessoaService.excluir(lancamento.id)
+  excluir(pessoa: any) {
+    this.pessoaService.excluir(pessoa.id)
       .then(() => {
         this.grid.reset();
-        this.messageService.add({ severity: 'success', detail: 'Lançamento excluído com sucesso!' })
+        this.messageService.add({ severity: 'success', detail: 'Lançamento ['+pessoa.nome+'] excluído com sucesso!' })
       })
       .catch(erro => this.errorHandler.handle(erro));
   }

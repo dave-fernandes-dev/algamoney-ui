@@ -55,7 +55,7 @@ export class LancamentosPesquisaComponent  {
     this.lancamentoService.excluir(lancamento.id)
       .then(() => {
         this.grid.reset();
-        this.messageService.add({ severity: 'success', detail: 'Lançamento excluído com sucesso!' })
+        this.messageService.add({ severity: 'success', detail: 'Lançamento ['+lancamento.descricao+'] excluído com sucesso!' })
       })
       .catch(erro => this.errorHandler.handle(erro));
   }
