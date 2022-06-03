@@ -56,4 +56,18 @@ export class PessoasPesquisaComponent {
       })
       .catch(erro => this.errorHandler.handle(erro));
   }
+
+
+  alternarStatus(pessoa: any): void {
+    const novoStatus = !pessoa.ativo;
+
+    this.pessoaService.mudarStatus(pessoa.id, novoStatus)
+      .then(() => {
+        const acao = novoStatus ? 'ATIVADA' : 'DESATIVADA';
+
+        pessoa.ativo = novoStatus;
+        this.messageService.add({ severity: 'success', detail: `Pessoa ${pessoa.nome} ${acao} com sucesso!` });
+      })
+      .catch(erro => this.errorHandler.handle(erro));
+  }
 }

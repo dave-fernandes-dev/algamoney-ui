@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MessageService } from 'primeng/api';
 
 export class PessoaFiltro{
   nome?: string;
@@ -13,6 +14,7 @@ export class PessoaFiltro{
 export class PessoaService {
 
   pessoasUrl = 'http://localhost:8090/pessoas';
+  errorHandler: any;
 
 
   constructor(private http: HttpClient) {}
@@ -60,4 +62,12 @@ export class PessoaService {
   }
 
 
+  mudarStatus(codigo: number, ativo: boolean): Promise<void> {
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==')
+      //.append('Content-Type', 'application/json');
+
+    return this.http.put<void>(`${this.pessoasUrl}/${codigo}/ativo`, ativo, { headers })
+      .toPromise();
+  }
 }
