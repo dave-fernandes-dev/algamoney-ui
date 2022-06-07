@@ -1,28 +1,28 @@
 <div class="container font-bold">
-  <form #lancamentoForm="ngForm">
+  <form #lancamentoForm="ngForm" autocomplete="off" (ngSubmit)="salvar(lancamentoForm)">
     <div class="grid">
       <div class="col-12">
         <h2>Novo Lançamento</h2>
       </div>
 
     <div class="col-12 md:col-12">
-      <p-selectButton [options]="tipos" #tipo></p-selectButton>
+      <p-selectButton [options]="tipos" #tipo [(ngModel)]="lancamento.tipo" name="tipo"></p-selectButton>
     </div>
 
 
       <div class="col-12 md:col-3 p-fluid">
         <label>Vencimento</label>
-        <p-calendar dateFormat="dd/mm/yy" [showIcon]="true"  placeholder="dd/MM/yyyy"></p-calendar>
+        <p-calendar dateFormat="dd/mm/yy" [showIcon]="true"  placeholder="dd/MM/yyyy" [(ngModel)]="lancamento.dataVencimento" name="dataVencimento"  required="true"></p-calendar>
       </div>
 
       <div class="col-12 md:col-3 p-fluid">
         <label>{{ tipo.value === "RECEITA" ? "Recebimento" : "Pagamento" }}</label>
-        <p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/MM/yyyy"></p-calendar>
+        <p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/MM/yyyy" [(ngModel)]="lancamento.dataPagamento" name="dataPagamento" ></p-calendar>
       </div>
 
       <div class="col-12 md:col-10 p-fluid">
         <label>Descrição {{ descricao.errors | json}}</label>
-        <input type="text" pInputText name="descricao" ngModel #descricao="ngModel" required minlength="5"/>
+        <input type="text" pInputText name="descricao" ngModel #descricao="ngModel" required minlength="5" [(ngModel)]="lancamento.descricao"/>
 
         <app-message [control]="descricao" error="required" text="Informe uma Descrição"></app-message>
         <app-message [control]="descricao" error="minlength" text="Mínimo de {{ descricao.errors?.minlength?.requiredLength }} caracteres. Você digitou apenas {{ descricao.errors?.minlength?.actualLength }}"></app-message>
@@ -31,27 +31,27 @@
 
       <div class="col-12 md:col-2 p-fluid">
         <label>Valor</label>
-        <p-inputNumber mode="currency" currency="BRL" placeholder="0,00"></p-inputNumber>
+        <p-inputNumber mode="currency" currency="BRL" placeholder="0,00" [(ngModel)]="lancamento.valor" name="valor"></p-inputNumber>
       </div>
 
       <div class="col-12 md:col-6 p-fluid">
         <label>Categoria {{categoria.value}}</label>
-        <p-dropdown [options]="categorias" placeholder="Selecione" [filter]="true" #categoria></p-dropdown>
+        <p-dropdown [options]="categorias" placeholder="Selecione" [filter]="true" #categoria [(ngModel)]="lancamento.categoria.id" name="categoria"></p-dropdown>
       </div>
 
       <div class="col-12 md:col-6 p-fluid">
         <label>Pessoa</label>
-        <p-dropdown [options]="pessoas" placeholder="Selecione" [filter]="true" ></p-dropdown>
+        <p-dropdown [options]="pessoas" placeholder="Selecione" [filter]="true" [(ngModel)]="lancamento.pessoa.id" name="pessoa"></p-dropdown>
       </div>
 
       <div class="col-12 p-fluid">
         <label>Observação</label>
-        <textarea [rows]="3" pInputTextarea [autoResize]="true"></textarea>
+        <textarea [rows]="3" pInputTextarea [autoResize]="true" [(ngModel)]="lancamento.observacao" name="observacao"></textarea>
       </div>
     </div>
 
     <div class="col-12">
-      <button pButton type="button" label="Salvar"></button>
+      <button pButton type="submit" label="Salvar" [disabled]="lancamentoForm.invalid"></button>
       <button pButton type="button" label="Novo" class="p-button-info"></button>
       <p-button label="Voltar para a Pesquisa" styleClass="p-button-link"></p-button>
     </div>
@@ -62,7 +62,10 @@
         <pre>{{categorias | json}}</pre>
         <br>
         <pre>{{pessoas | json}}</pre>
+        <pre>lancamentoForm: {{lancamentoForm | json}}</pre>
       -->
+      lancamento:
+      <pre> {{lancamento | json}}</pre>
     </div>
 
 
