@@ -53,6 +53,14 @@ export class PessoaService {
       .then((response: any) => response['content']);
   }
 
+  listarTodas2(): Promise<any> {
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+
+    return this.http.get(this.pessoasUrl, { headers })
+      .toPromise();
+  }
+
   excluir(codigo: number): Promise<void> {
     const headers = new HttpHeaders()
       .append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');

@@ -36,7 +36,7 @@
 
       <div class="col-12 md:col-6 p-fluid">
         <label>Categoria {{categoria.value}}</label>
-        <p-dropdown [options]="categorias" placeholder="Selecione" #categoria></p-dropdown>
+        <p-dropdown [options]="categorias" placeholder="Selecione" [filter]="true" #categoria></p-dropdown>
       </div>
 
       <div class="col-12 md:col-6 p-fluid">
@@ -59,10 +59,9 @@
 
     <div>
       <!--
-        <p>Without JSON pipe:</p>
-        <pre>{{categorias}}</pre>
-        <p>With JSON pipe:</p>
         <pre>{{categorias | json}}</pre>
+        <br>
+        <pre>{{pessoas | json}}</pre>
       -->
     </div>
 
