@@ -22,6 +22,7 @@
 
       <ng-template pTemplate="header">
         <tr>
+          <th>Id</th>
           <th>Nome</th>
           <th>Cidade</th>
           <th>Estado</th>
@@ -31,6 +32,7 @@
       </ng-template>
       <ng-template pTemplate="body" let-pessoa>
         <tr>
+          <td>{{ pessoa.id }}</td>
           <td>{{ pessoa.nome }}</td>
           <td>{{ pessoa.endereco.cidade | lowercase }}</td>
           <td>{{ pessoa.endereco.estado  | uppercase}}</td>

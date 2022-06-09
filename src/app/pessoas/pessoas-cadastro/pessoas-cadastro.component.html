@@ -1,5 +1,5 @@
 <div class="container font-bold">
-  <form>
+  <form #pessoaForm="ngForm" autocomplete="off" (ngSubmit)="salvar(pessoaForm)">
     <div class="grid">
       <div class="col-12">
         <h2>Nova Pessoa</h2>
@@ -7,50 +7,61 @@
 
       <div class="col-12 p-fluid">
         <label>Nome</label>
-        <input type="text" pInputText />
+        <input type="text" pInputText [(ngModel)]="pessoa.nome" name="nome" required minlength="5"/>
       </div>
 
       <div class="col-12 md:col-10 p-fluid">
         <label>Logradouro</label>
-        <input type="text" pInputText />
+        <input type="text" pInputText [(ngModel)]="pessoa.endereco.logradouro" name="logradouro" required minlength="1"/>
       </div>
 
       <div class="col-12 md:col-2 p-fluid">
         <label>Número</label>
-        <p-inputNumber  placeholder="0"></p-inputNumber>
+        <p-inputNumber  placeholder="0" [(ngModel)]="pessoa.endereco.numero" name="numero" required="true"></p-inputNumber>
       </div>
 
       <div class="col-12 md:col-4 p-fluid">
         <label>Complemento</label>
-        <input type="text" pInputText />
+        <input type="text" pInputText [(ngModel)]="pessoa.endereco.complemento" name="complemento" required minlength="5" />
       </div>
 
       <div class="col-12 md:col-4 p-fluid">
         <label>Bairro</label>
-        <input type="text" pInputText />
+        <input type="text" pInputText [(ngModel)]="pessoa.endereco.bairro" name="bairro" required minlength="5"/>
       </div>
 
       <div class="col-12 md:col-4 p-fluid">
         <label>Cep</label>
-        <p-inputMask mask="99.999-999" placeholder="99.999-999"></p-inputMask>
+        <p-inputMask mask="99.999-999" placeholder="99.999-999" [(ngModel)]="pessoa.endereco.cep" name="cep" required="true"></p-inputMask>
       </div>
 
       <div class="col-12 md:col-6 p-fluid">
         <label>Cidade</label>
-        <input type="text" pInputText />
+        <input type="text" pInputText [(ngModel)]="pessoa.endereco.cidade" name="cidade" required minlength="5"/>
       </div>
 
       <div class="col-12 md:col-6 p-fluid">
         <label>Estado</label>
-        <input type="text" pInputText />
+        <input type="text" pInputText [(ngModel)]="pessoa.endereco.estado" name="estado" required minlength="5"/>
       </div>
 
     </div>
 
     <div class="col-12">
-      <button pButton type="button" label="Salvar"></button>
+      <button pButton type="submit" label="Salvar"></button>
       <button pButton type="button" label="Novo" class="p-button-info"></button>
       <p-button label="Voltar para a Pesquisa" styleClass="p-button-link"></p-button>
     </div>
+
+    <div>
+      <!--
+        <pre>{{categorias | json}}</pre>
+        <br>
+        <pre>{{pessoas | json}}</pre>
+        <pre>lancamentoForm: {{lancamentoForm | json}}</pre>
+      -->
+      <pre> {{pessoa | json}}</pre>
+    </div>
+
   </form>
 </div>
