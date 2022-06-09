@@ -30,6 +30,7 @@
     (onLazyLoad)="aoMudarPagina($event)" #tabela>
       <ng-template pTemplate="header">
         <tr>
+          <th>Id</th>
           <th>Pessoa</th>
           <th>Descrição</th>
           <th>Vencimento</th>
@@ -40,6 +41,7 @@
       </ng-template>
       <ng-template pTemplate="body" let-lancamento>
         <tr>
+          <td>{{ lancamento.id }}</td>
           <td>{{ lancamento.pessoa }}</td>
           <td>{{ lancamento.descricao }}</td>
           <td class="col-data-content">{{ lancamento.dataVencimento  }}</td>
