@@ -26,6 +26,7 @@ import { PessoasModule } from '../pessoas/pessoas.module';
 import { ErrorHandlerService } from './error-handler.service';
 
 import localePt from '@angular/common/locales/pt';
+import { RouterModule } from '@angular/router';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -51,6 +52,9 @@ registerLocaleData(localePt, 'pt-BR');
     HttpClientModule,
     ToastModule,
     ConfirmDialogModule,
+
+    //sem o RouterModule os links href não funcionam
+    RouterModule,
 
     LancamentosModule,
     PessoasModule,

@@ -19,12 +19,13 @@ export class PessoasCadastroComponent implements OnInit {
     private messageService: MessageService,
     ) {}
   ngOnInit(): void {
+    //temp
   }
 
   salvar(pessoaForm: NgForm) {
     this.pessoaService.adicionar(this.pessoa)
     .then(() => {
-      this.messageService.add({severity:'success', summary:'Registro salvo com Sucesso!', detail:'Registro salvo com Sucesso!'});
+      this.messageService.add({severity:'success', detail:'Registro salvo com Sucesso!'});
       pessoaForm.reset();
       this.pessoa = new Pessoa();
     })

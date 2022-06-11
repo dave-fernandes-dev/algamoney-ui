@@ -53,18 +53,13 @@
     <div class="col-12">
       <button pButton type="submit" label="Salvar" [disabled]="lancamentoForm.invalid"></button>
       <button pButton type="button" label="Novo" class="p-button-info"></button>
-      <p-button label="Voltar para a Pesquisa" styleClass="p-button-link"></p-button>
+      <p-button label="Voltar para a Pesquisa" styleClass="p-button-link" routerLink="/lancamentos"></p-button>
     </div>
 
 
     <div>
       <!--
-        <pre>{{categorias | json}}</pre>
-        <br>
-        <pre>{{pessoas | json}}</pre>
-        <pre>lancamentoForm: {{lancamentoForm | json}}</pre>
       -->
-      lancamento:
       <pre> {{lancamento | json}}</pre>
     </div>
 
