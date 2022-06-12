@@ -54,12 +54,29 @@ export class LancamentosCadastroComponent implements OnInit {
     return Boolean(this.lancamento.id);
   }
 
-  salvar(lancamentoForm: NgForm) {
+  save(lancamentoForm: NgForm) {
+    if (this.editando()) {
+      this.update(lancamentoForm);
+    } else {
+      this.create(lancamentoForm);
+    }
+  }
+
+  create(lancamentoForm: NgForm) {
     this.lancamentoService.adicionar(this.lancamento)
     .then(() => {
-      this.messageService.add({severity:'success', detail:'Registro salvo com Sucesso!'});
+      this.messageService.add({severity:'success', detail:'Registro Criado com Sucesso!'});
       lancamentoForm.reset();
       this.lancamento = new Lancamento();
+    })
+    .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  update(_lancamentoForm: NgForm) {
+    this.lancamentoService.atualizar(this.lancamento)
+    .then((resultado:Lancamento) => {
+      this.lancamento = resultado;
+      this.messageService.add({severity:'success', detail:'Registro Atualizado com Sucesso!'});
     })
     .catch(erro => this.errorHandler.handle(erro));
   }
