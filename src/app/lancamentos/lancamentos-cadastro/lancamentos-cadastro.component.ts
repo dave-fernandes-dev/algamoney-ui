@@ -34,15 +34,30 @@ export class LancamentosCadastroComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.params);
+    const id =this.route.snapshot.params['id'];
+
+    if (id){
+      this.loadLancamentos(id);
+    }
+
     this.loadCategorias();
     this.loadPessoas();
+  }
+
+  private loadLancamentos(id: any) {
+    this.lancamentoService.buscarPorCodigo(id)
+      .then(resultado => this.lancamento = resultado)
+      .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  editando(){
+    return Boolean(this.lancamento.id);
   }
 
   salvar(lancamentoForm: NgForm) {
     this.lancamentoService.adicionar(this.lancamento)
     .then(() => {
-      this.messageService.add({severity:'success', summary:'Registro salvo com Sucesso!', detail:'Registro salvo com Sucesso!'});
+      this.messageService.add({severity:'success', detail:'Registro salvo com Sucesso!'});
       lancamentoForm.reset();
       this.lancamento = new Lancamento();
     })
