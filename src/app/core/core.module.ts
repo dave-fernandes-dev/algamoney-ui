@@ -27,11 +27,12 @@ import { ErrorHandlerService } from './error-handler.service';
 
 import localePt from '@angular/common/locales/pt';
 import { RouterModule } from '@angular/router';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
-  declarations: [NavbarComponent],
+  declarations: [NavbarComponent, PaginaNaoEncontradaComponent  ],
   imports: [
     CommonModule,
     AccordionModule,
