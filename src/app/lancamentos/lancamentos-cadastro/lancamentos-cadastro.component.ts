@@ -7,6 +7,7 @@ import { Lancamento } from '../../core/model';
 import { LancamentoService } from '../lancamento.service';
 import { MessageService } from 'primeng/api';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-lancamentos-cadastro',
@@ -30,11 +31,14 @@ export class LancamentosCadastroComponent implements OnInit {
               private messageService: MessageService,
               private lancamentoService: LancamentoService,
               private route: ActivatedRoute,
-              private router: Router
+              private router: Router,
+              private title: Title
               ) {}
 
 
   ngOnInit(): void {
+    this.title.setTitle('Novo Lancamento');
+
     const id =this.route.snapshot.params['id'];
 
     if (id){

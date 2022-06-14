@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ConfirmationService, LazyLoadEvent, MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
@@ -19,8 +20,11 @@ export class LancamentosPesquisaComponent  {
   constructor(private lancamentoService: LancamentoService,
               private messageService: MessageService,
               private confirmation: ConfirmationService,
-              private errorHandler: ErrorHandlerService
-              ) {}
+              private errorHandler: ErrorHandlerService,
+              private title: Title,
+              ) {
+                this.title.setTitle('Pesquisar Lancamentos');
+              }
 
   pesquisar(pagina = 0) {
 

@@ -28,6 +28,7 @@ import { ErrorHandlerService } from './error-handler.service';
 import localePt from '@angular/common/locales/pt';
 import { RouterModule } from '@angular/router';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
+import { Title } from '@angular/platform-browser';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -61,7 +62,7 @@ registerLocaleData(localePt, 'pt-BR');
     PessoasModule,
   ],
   exports: [NavbarComponent, ToastModule, ConfirmDialogModule, LancamentosModule, PessoasModule],
-  providers: [DatePipe, ErrorHandlerService, MessageService, ConfirmationService,
+  providers: [DatePipe, ErrorHandlerService, MessageService, ConfirmationService, Title,
               {provide: LOCALE_ID, useValue: 'pt-BR'}
             ]
 })

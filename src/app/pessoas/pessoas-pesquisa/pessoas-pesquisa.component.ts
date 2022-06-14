@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { LazyLoadEvent, ConfirmationService, MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
@@ -19,8 +20,11 @@ export class PessoasPesquisaComponent {
   constructor(private pessoaService: PessoaService,
     private confirmation: ConfirmationService,
     private messageService: MessageService,
-    private errorHandler: ErrorHandlerService
-    ) {}
+    private errorHandler: ErrorHandlerService,
+    private title: Title,
+    ) {
+      this.title.setTitle('Pesquisar Pessoas');
+    }
 
   pesquisar(pagina = 0) {
     this.filtro.pagina = pagina;
