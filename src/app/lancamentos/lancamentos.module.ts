@@ -15,12 +15,12 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { TableModule } from 'primeng/table';
 import { TabViewModule } from 'primeng/tabview';
 import { TooltipModule } from 'primeng/tooltip';
-import { AppRoutingModule } from '../app-routing.module';
-
 
 import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
 import { LancamentosCadastroComponent } from './lancamentos-cadastro/lancamentos-cadastro.component';
 import { SharedModule } from '../shared/shared.module';
+import { LancamentosRoutingModule } from './lancamentos-routing.module';
+
 
 @NgModule({
   declarations: [LancamentosPesquisaComponent, LancamentosCadastroComponent],
@@ -28,7 +28,6 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     AccordionModule,
     TabViewModule,
     InputTextModule,
@@ -43,9 +42,9 @@ import { SharedModule } from '../shared/shared.module';
     InputNumberModule,
     InputMaskModule,
 
-    SharedModule
-
+    SharedModule,
+    LancamentosRoutingModule,
   ],
-  exports: []
+  exports: [],
 })
 export class LancamentosModule {}

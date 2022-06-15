@@ -6,16 +6,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
+//import { PessoasModule } from './pessoas/pessoas.module';
+//import { LancamentosModule } from './lancamentos/lancamentos.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-
+    RouterModule,
+    HttpClientModule,
 
     CoreModule,
+    //LancamentosModule,
+    //PessoasModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
