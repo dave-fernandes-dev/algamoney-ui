@@ -38,13 +38,13 @@
           <td>{{ pessoa.endereco.estado  | uppercase}}</td>
           <td class="font-bold" >
 
-            <a href="#" [pTooltip]="pessoa.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top" [ngStyle]="{ color: pessoa.ativo === true ? 'green' : 'red'}" (click)="alternarStatus(pessoa)">
+            <a href="javascript:;" [pTooltip]="pessoa.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top" [ngStyle]="{ color: pessoa.ativo === true ? 'green' : 'red'}" (click)="alternarStatus(pessoa)">
                  {{ pessoa.ativo ? 'Ativo' : 'Inativo' }}
             </a>
 
           </td>
           <td class="col-acoes">
-            <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></a>
+            <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" [routerLink]="['/pessoas', pessoa.id ]"></a>
             <button pButton icon="pi pi-trash" pTooltip="Excluir" (click)="confirmarExclusao(pessoa)" tooltipPosition="bottom"></button>
           </td>
         </tr>

@@ -42,14 +42,15 @@ export class LancamentosCadastroComponent implements OnInit {
     const id =this.route.snapshot.params['id'];
 
     if (id){
-      this.loadLancamentos(id);
+      this.loadLancamento(id);
+      this.title.setTitle('Editar Lancamento');
     }
 
     this.loadCategorias();
     this.loadPessoas();
   }
 
-  private loadLancamentos(id: any) {
+  private loadLancamento(id: any) {
     this.lancamentoService.buscarPorCodigo(id)
       .then(resultado => this.lancamento = resultado)
       .catch(erro => this.errorHandler.handle(erro));
