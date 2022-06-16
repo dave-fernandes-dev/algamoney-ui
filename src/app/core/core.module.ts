@@ -1,24 +1,9 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
-import { CommonModule, DatePipe, registerLocaleData } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { AccordionModule } from 'primeng/accordion';
-import { ButtonModule } from 'primeng/button';
-import { CalendarModule } from 'primeng/calendar';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { DropdownModule } from 'primeng/dropdown';
-import { InputMaskModule } from 'primeng/inputmask';
-import { InputNumberModule } from 'primeng/inputnumber';
-import { InputTextModule } from 'primeng/inputtext';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { MessageModule } from 'primeng/message';
-import { MessagesModule } from 'primeng/messages';
-import { SelectButtonModule } from 'primeng/selectbutton';
-import { TableModule } from 'primeng/table';
-import { TabViewModule } from 'primeng/tabview';
+import { DatePipe, registerLocaleData } from '@angular/common';
+
 import { ToastModule } from 'primeng/toast';
-import { TooltipModule } from 'primeng/tooltip';
 import { MessageService, ConfirmationService } from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { LancamentosModule } from '../lancamentos/lancamentos.module';
@@ -29,37 +14,20 @@ import localePt from '@angular/common/locales/pt';
 import { RouterModule } from '@angular/router';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
 import { Title } from '@angular/platform-browser';
+import { SegurancaModule } from '../seguranca/seguranca.module';
 
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [NavbarComponent, PaginaNaoEncontradaComponent  ],
   imports: [
-    CommonModule,
-    AccordionModule,
-    TabViewModule,
-    InputTextModule,
-    ButtonModule,
-    TableModule,
-    TooltipModule,
-    CalendarModule,
-    FormsModule,
-    InputTextareaModule,
-    SelectButtonModule,
-    DropdownModule,
-    InputNumberModule,
-    InputMaskModule,
-    MessagesModule,
-    MessageModule,
-    HttpClientModule,
-    ToastModule,
-    ConfirmDialogModule,
 
     //sem o RouterModule os links href não funcionam
     RouterModule,
 
     LancamentosModule,
     PessoasModule,
+    SegurancaModule,
   ],
   exports: [NavbarComponent, ToastModule, ConfirmDialogModule, LancamentosModule, PessoasModule],
   providers: [DatePipe, ErrorHandlerService, MessageService, ConfirmationService, Title,
