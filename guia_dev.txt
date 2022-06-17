@@ -13,5 +13,10 @@ npm install primeflex --save
 //font awesome
 npm install font-awesome --save
 
+// decoder token jwt
+npm install --save @auth0/angular-jwt
+
 //rodar usando angular do projeto
 npx ng serve -o
+
+
