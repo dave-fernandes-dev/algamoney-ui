@@ -14,8 +14,12 @@ export class NavbarComponent implements OnInit {
   constructor(private auth: AuthService) { /* TODO document why this constructor is empty */  }
 
   ngOnInit(): void {
-       /* TODO document why this method 'ngOnInit' is empty */
     this.usuarioLogado = this.auth.jwtPayLoad?.nome;
+    /* TODO document why this method 'ngOnInit' is empty */
+  }
+
+  temPermissao(permissao: string){
+    return this.auth.temPermissao(permissao);
   }
 
 }

@@ -1,5 +1,5 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
-import { DatePipe, registerLocaleData } from '@angular/common';
+import { CommonModule, DatePipe, registerLocaleData } from '@angular/common';
 
 import { ToastModule } from 'primeng/toast';
 import { MessageService, ConfirmationService } from 'primeng/api';
@@ -21,6 +21,7 @@ registerLocaleData(localePt, 'pt-BR');
 @NgModule({
   declarations: [NavbarComponent, PaginaNaoEncontradaComponent  ],
   imports: [
+    CommonModule,
 
     //sem o RouterModule os links href não funcionam
     RouterModule,

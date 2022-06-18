@@ -52,4 +52,8 @@ export class AuthService {
       this.armazenarToken(token);
     }
   }
+
+  temPermissao(permissao: string) {
+    return this.jwtPayLoad && this.jwtPayLoad.authorities.includes(permissao);
+  }
 }
