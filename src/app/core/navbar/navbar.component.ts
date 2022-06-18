@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/seguranca/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  exibindoMenu = false;
+  exibindoMenu: boolean = false;
+  usuarioLogado: string = '';
 
-  constructor() { /* TODO document why this constructor is empty */  }
+  constructor(private auth: AuthService) { /* TODO document why this constructor is empty */  }
 
-  ngOnInit(): void {   /* TODO document why this method 'ngOnInit' is empty */ }
+  ngOnInit(): void {
+       /* TODO document why this method 'ngOnInit' is empty */
+    this.usuarioLogado = this.auth.jwtPayLoad?.nome;
+  }
 
 }
