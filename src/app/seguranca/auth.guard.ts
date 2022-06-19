@@ -13,7 +13,7 @@ constructor(private auth: AuthService, private router: Router){}
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    _state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
       if (this.auth.isAccessTokenInvalido()) {
         console.log('Navegação com Access Token Inválido. Obtendo novo Token...');

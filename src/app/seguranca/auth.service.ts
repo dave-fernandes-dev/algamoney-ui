@@ -91,4 +91,10 @@ export class AuthService {
 
     return !token || this.jwtHelper.isTokenExpired(token);
   }
+
+  limparAccessToken() {
+    localStorage.removeItem('token');
+    this.jwtPayLoad = null;
+  }
+
 }
