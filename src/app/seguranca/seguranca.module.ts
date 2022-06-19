@@ -8,6 +8,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MoneyHttpInterceptor } from './money-http-interceptor';
 import { AuthGuard } from './auth.guard';
 import { LogoutService } from './logout.service';
+import { environment } from 'src/environments/environment';
+
 
 export function tokenGetter(): string {
   return localStorage.getItem('token')!;
@@ -22,7 +24,7 @@ export function tokenGetter(): string {
     SharedModule,
 
     //necessario para op decoder token jwt
-    JwtModule.forRoot({ config: { tokenGetter, allowedDomains: ['localhost:8090'], disallowedRoutes: ['http://localhost:8090/oauth/token'] }}),
+    JwtModule.forRoot({ config: { tokenGetter, allowedDomains: environment.tokenAllowedDomains, disallowedRoutes: environment.tokenDisallowedRoutes }}),
   ],
   providers: [JwtHelperService, LogoutService,
     {

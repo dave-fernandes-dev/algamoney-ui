@@ -1,11 +1,12 @@
 import { AuthService } from './auth.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class LogoutService {
 
-  tokensRevokeUrl = 'http://localhost:8090/tokens/revoke';
+  tokensRevokeUrl = environment.apiUrl+'/tokens/revoke';
 
   constructor(
     private http: HttpClient,
