@@ -76,4 +76,10 @@ export class AuthService {
   temPermissao(permissao: string) {
     return this.jwtPayLoad && this.jwtPayLoad.authorities.includes(permissao);
   }
+
+  isAccessTokenInvalido(){
+    const token = localStorage.getItem('token');
+
+    return !token || this.jwtHelper.isTokenExpired(token);
+  }
 }
