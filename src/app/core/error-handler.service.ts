@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MessageService } from 'primeng/api';
+import { Message, MessageService } from 'primeng/api';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +10,18 @@ export class ErrorHandlerService {
 
   handle(errorResponse: any) {
     let msg: string;
+    let msgs: Message[] = [];
 
     if (typeof errorResponse === 'string') {
       msg = errorResponse;
 
     } else if (errorResponse instanceof HttpErrorResponse && errorResponse.status >= 400 && errorResponse.status <= 499) {
       msg = 'Ocorreu um erro ao processar a sua solicitação';
+
+      if (errorResponse.status === 403){
+        //msgs.push({ severity:'error', detail: 'Acesso Negado ou Proibido!', life:10000, closable:true });
+        msg = 'Você não tem Permissão para executar esta ação!';
+      }
 
       try {
         msg = errorResponse.error.error;
@@ -29,6 +35,7 @@ export class ErrorHandlerService {
     }
 
     this.messageService.add({ severity:'error', detail: msg, life:10000, closable:true });
+    this.messageService.addAll(msgs);
   }
 
 }

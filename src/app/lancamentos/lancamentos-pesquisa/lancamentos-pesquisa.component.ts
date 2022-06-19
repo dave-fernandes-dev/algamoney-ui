@@ -4,6 +4,7 @@ import { ConfirmationService, LazyLoadEvent, MessageService } from 'primeng/api'
 import { Table } from 'primeng/table';
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 import { LancamentoService, LancamentoFiltro } from '../lancamento.service';
+import { AuthService } from 'src/app/seguranca/auth.service';
 
 @Component({
   selector: 'app-lancamentos-pesquisa',
@@ -21,6 +22,7 @@ export class LancamentosPesquisaComponent  {
               private messageService: MessageService,
               private confirmation: ConfirmationService,
               private errorHandler: ErrorHandlerService,
+              private auth: AuthService,
               private title: Title,
               ) {
                 this.title.setTitle('Pesquisar Lancamentos');
