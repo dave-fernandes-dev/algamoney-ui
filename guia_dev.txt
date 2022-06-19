@@ -19,4 +19,7 @@ npm install --save @auth0/angular-jwt
 //rodar usando angular do projeto
 npx ng serve -o
 
+//compilar p produção
+ng build --configuration=production
+
 
