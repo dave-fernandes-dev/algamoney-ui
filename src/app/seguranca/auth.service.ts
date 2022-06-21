@@ -58,11 +58,11 @@ export class AuthService {
     .then((response:any) => {
       this.armazenarToken(response['access_token']);
           console.log('novo access token criado', response);
-          //return Promise.resolve();
+          return Promise.resolve();
     })
     .catch(response => {
           console.log('Erro ao renovar Token, RefreshToken Expirado, Redirecionando para login', response);
-          //return Promise.resolve();
+          return Promise.resolve();
     });
   }
 
