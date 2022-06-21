@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 import { CategoriaService } from '../../categorias/categoria.service';
 import { PessoaService } from '../../pessoas/pessoa.service';
@@ -18,7 +18,7 @@ export class LancamentoCadastroReativoComponent implements OnInit {
 
   categorias: any[] = [];
   pessoas: any[] = [];
-  lancamento = new Lancamento();
+  //lancamento = new Lancamento();
   form!: FormGroup;
 
   tipos = [
@@ -78,24 +78,24 @@ export class LancamentoCadastroReativoComponent implements OnInit {
 
   private loadLancamento(id: any) {
     this.lancamentoService.buscarPorCodigo(id)
-      .then(resultado => this.lancamento = resultado)
+      .then(resultado => this.form.setValue(resultado))
       .catch(erro => this.errorHandler.handle(erro));
   }
 
   editando(){
-    return Boolean(this.lancamento.id);
+    return Boolean(this.form.get('id')?.value);
   }
 
-  save(lancamentoForm: NgForm) {
+  save() {
     if (this.editando()) {
-      this.update(lancamentoForm);
+      this.update();
     } else {
-      this.create(lancamentoForm);
+      this.create();
     }
   }
 
-  create(_lancamentoForm: NgForm) {
-    this.lancamentoService.adicionar(this.lancamento)
+  create() {
+    this.lancamentoService.adicionar(this.form.value)
     .then(objCreated => {
       this.messageService.add({severity:'success', detail:'Registro Criado com Sucesso!'});
       //lancamentoForm.reset();
@@ -106,10 +106,10 @@ export class LancamentoCadastroReativoComponent implements OnInit {
     .catch(erro => this.errorHandler.handle(erro));
   }
 
-  update(_lancamentoForm: NgForm) {
-    this.lancamentoService.atualizar(this.lancamento)
-    .then((resultado:Lancamento) => {
-      this.lancamento = resultado;
+  update() {
+    this.lancamentoService.atualizar(this.form.value)
+    .then((resultado) => {
+      this.form.setValue(resultado);
       this.messageService.add({severity:'success', detail:'Registro Atualizado com Sucesso!'});
     })
     .catch(erro => this.errorHandler.handle(erro));
@@ -131,9 +131,8 @@ export class LancamentoCadastroReativoComponent implements OnInit {
       .catch(erro => this.errorHandler.handle(erro));
   }
 
-  novo(form: NgForm){
-    form.reset(new Lancamento());
+  novo(){
+    this.form.reset(new Lancamento());
     this.router.navigate(['/lancamentos/novo'])
-
   }
 }
