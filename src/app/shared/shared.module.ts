@@ -5,7 +5,7 @@ import { Message2Component } from './message/message2.component';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
@@ -36,7 +36,7 @@ import { TooltipModule } from 'primeng/tooltip';
     TableModule,
     TooltipModule,
     CalendarModule,
-    FormsModule,
+    FormsModule, ReactiveFormsModule,
     InputTextareaModule,
     SelectButtonModule,
     DropdownModule,
@@ -52,7 +52,9 @@ import { TooltipModule } from 'primeng/tooltip';
     //sem o RouterModule os links href não funcionam
     RouterModule,
   ],
-  exports: [MessageComponent, Message2Component,
+  exports: [
+    MessageComponent,
+    Message2Component,
     CommonModule,
     MessageModule,
     MessagesModule,
@@ -63,7 +65,7 @@ import { TooltipModule } from 'primeng/tooltip';
     TableModule,
     TooltipModule,
     CalendarModule,
-    FormsModule,
+    FormsModule, ReactiveFormsModule,
     InputTextareaModule,
     SelectButtonModule,
     DropdownModule,
@@ -77,4 +79,4 @@ import { TooltipModule } from 'primeng/tooltip';
     CheckboxModule,
   ],
 })
-export class SharedModule { }
+export class SharedModule {}
