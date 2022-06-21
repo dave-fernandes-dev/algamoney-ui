@@ -5,9 +5,12 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:8090',
-  //apiUrl: 'https://vl-algamoney-api.herokuapp.com',
   tokenAllowedDomains: [  /localhost:8090/ ],
   tokenDisallowedRoutes: [/\/oauth\/token/],
+
+  //apiUrl: 'https://vl-algamoney-api.herokuapp.com',
+  //tokenAllowedDomains: [ /vl-algamoney-api.herokuapp.com/ ],
+  //tokenDisallowedRoutes: [/\/oauth\/token/],
 };
 
 /*
