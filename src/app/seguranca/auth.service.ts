@@ -61,7 +61,7 @@ export class AuthService {
           //return Promise.resolve();
     })
     .catch(response => {
-          console.log('Erro ao renovar Token', response);
+          console.log('Erro ao renovar Token, RefreshToken Expirado', response);
           //return Promise.resolve();
     });
   }
