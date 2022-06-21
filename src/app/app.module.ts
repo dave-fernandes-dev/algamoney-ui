@@ -9,8 +9,7 @@ import { CoreModule } from './core/core.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-//import { PessoasModule } from './pessoas/pessoas.module';
-//import { LancamentosModule } from './lancamentos/lancamentos.module';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -21,8 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
 
     CoreModule,
-    //LancamentosModule,
-    //PessoasModule
 
   ],
   providers: [],

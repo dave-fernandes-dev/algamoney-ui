@@ -6,9 +6,9 @@ import { AuthGuard } from '../seguranca/auth.guard';
 
 
 const routes: Routes = [
-  { path: 'pessoas', component: PessoasPesquisaComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_PESQUISAR_PESSOA']} },
-  { path: 'pessoas/novo', component: PessoasCadastroComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_CADASTRAR_PESSOA']} },
-  { path: 'pessoas/:id', component: PessoasCadastroComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_CADASTRAR_PESSOA']} },
+  { path: '', component: PessoasPesquisaComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_PESQUISAR_PESSOA']} },
+  { path: 'novo', component: PessoasCadastroComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_CADASTRAR_PESSOA']} },
+  { path: ':id', component: PessoasCadastroComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_CADASTRAR_PESSOA']} },
   //{ path: '**', redirectTo: 'pagina-nao-encontrada' }
 ];
 

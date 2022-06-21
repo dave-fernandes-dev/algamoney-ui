@@ -6,8 +6,6 @@ import { MessageService, ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 import { NavbarComponent } from './navbar/navbar.component';
-import { LancamentosModule } from '../lancamentos/lancamentos.module';
-import { PessoasModule } from '../pessoas/pessoas.module';
 import { ErrorHandlerService } from './error-handler.service';
 
 import localePt from '@angular/common/locales/pt';
@@ -27,11 +25,9 @@ registerLocaleData(localePt, 'pt-BR');
     //sem o RouterModule os links href não funcionam
     RouterModule,
 
-    LancamentosModule,
-    PessoasModule,
     SegurancaModule,
   ],
-  exports: [NavbarComponent, ToastModule, ConfirmDialogModule, LancamentosModule, PessoasModule],
+  exports: [NavbarComponent, ToastModule, ConfirmDialogModule],
   providers: [DatePipe, ErrorHandlerService, MessageService, ConfirmationService, Title,
               {provide: LOCALE_ID, useValue: 'pt-BR'}
             ]
