@@ -76,6 +76,7 @@ export class LancamentoService {
       .toPromise();
   }
 
+  //codigo melhorado
   atualizar(lancamento: Lancamento): Promise<Lancamento> {
     return this.http.put(`${this.lancamentosUrl}/${lancamento.id}`, lancamento)
       .toPromise()
