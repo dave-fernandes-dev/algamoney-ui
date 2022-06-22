@@ -57,7 +57,7 @@ export class LancamentoCadastroReativoComponent implements OnInit {
 
   configForm(){
     this.form = this.formBuilder.group({
-      codigo: [],
+      id: [],
       tipo: ['RECEITA', Validators.required],
       dataVencimento: [null, Validators.required],
       dataPagamento: [],
@@ -78,7 +78,8 @@ export class LancamentoCadastroReativoComponent implements OnInit {
 
   private loadLancamento(id: any) {
     this.lancamentoService.buscarPorCodigo(id)
-      .then(resultado => this.form.setValue(resultado))
+      //.then(resultado => this.form.setValue(resultado))
+      .then(resultado => this.form.patchValue(resultado))  //con patchvalue so mapeia o q necessario
       .catch(erro => this.errorHandler.handle(erro));
   }
 
@@ -98,8 +99,6 @@ export class LancamentoCadastroReativoComponent implements OnInit {
     this.lancamentoService.adicionar(this.form.value)
     .then(objCreated => {
       this.messageService.add({severity:'success', detail:'Registro Criado com Sucesso!'});
-      //lancamentoForm.reset();
-      //this.lancamento = new Lancamento();
       this.router.navigate(['lancamentos', objCreated.id]);
 
     })
@@ -108,11 +107,14 @@ export class LancamentoCadastroReativoComponent implements OnInit {
 
   update() {
     this.lancamentoService.atualizar(this.form.value)
-    .then((resultado) => {
-      this.form.setValue(resultado);
+    .then((resultado:Lancamento) => {
+      //this.form.setValue(resultado);  total
+      this.form.patchValue(resultado);  //parcial
       this.messageService.add({severity:'success', detail:'Registro Atualizado com Sucesso!'});
     })
-    .catch(erro => this.errorHandler.handle(erro));
+    .catch(erro => {this.errorHandler.handle(erro)
+      //console.log('linha116', erro)
+    });
   }
 
   loadCategorias() {

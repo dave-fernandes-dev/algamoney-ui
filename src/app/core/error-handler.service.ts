@@ -20,7 +20,6 @@ export class ErrorHandlerService {
     if (typeof errorResponse === 'string') {
       msg = errorResponse;
 
-
     } else if (errorResponse instanceof NotAutenticatedError) {
       msg = 'Sua Sessão Expirou!';
       this.router.navigate(['/login']);

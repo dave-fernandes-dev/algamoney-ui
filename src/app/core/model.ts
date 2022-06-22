@@ -21,7 +21,7 @@ export class Categoria {
 
 export class Lancamento {
   id?: number;
-  tipo = 'RECEITA';
+  tipo? = 'RECEITA';
   descricao?: string;
   dataVencimento?: Date;
   dataPagamento?: Date;
