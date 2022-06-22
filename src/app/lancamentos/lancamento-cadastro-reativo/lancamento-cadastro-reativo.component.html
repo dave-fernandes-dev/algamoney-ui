@@ -33,6 +33,7 @@
       <div class="col-12 md:col-2 p-fluid">
         <label>Valor</label>
         <p-inputNumber mode="currency" currency="BRL" placeholder="0,00" name="valor" formControlName="valor"></p-inputNumber>
+        <app-message [control]="form.get('valor')" error="required" text="Informe um Valor"></app-message>
       </div>
 
       <div class="col-12 md:col-6 p-fluid" formGroupName="categoria">
