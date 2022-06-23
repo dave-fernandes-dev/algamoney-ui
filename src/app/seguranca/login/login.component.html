@@ -1,9 +1,16 @@
-<div class="container" style="max-width: 400px; margin: auto">
+<div class="container" style="max-width: 550px; margin: auto">
 
   <!-- {{ auth.jwtPayLoad | json}} -->
 
   <form autocomplete="on" #loginForm="ngForm">
     <div class="grid">
+
+      <div class="col-12 p-fluid">
+        <p>1) Atenção! o servidor heroku dorme a cada [30 minutos] sem requisição.</p>
+         <p>2) portanto aguarde até [1 minuto] para ele despertar ok?</p>
+         <p>3) usuario: admin@algamoney.com, senha: admin, ROLE_ADMIN </p>
+         <p>4) usuario: maria@algamoney.com, senha: maria, ROLE_USER </p>
+      </div>
 
       <div class="col-12 p-fluid">
         <h1>Login</h1>
