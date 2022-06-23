@@ -40,7 +40,7 @@ export class ErrorHandlerService {
 
     } else {
       msg = 'Erro ao processar serviço remoto. Tente novamente.';
-      msgs.push({ severity:'info', detail: 'Aguarde 1 Minuto por favor q estou levantando)', life:10000, closable:true });
+      msgs.push({ severity:'info', detail: 'Aguarde 1 Minuto por favor q estou levantando ツ', life:10000, closable:true });
       console.error('Ocorreu um erro', errorResponse);
     }
 
