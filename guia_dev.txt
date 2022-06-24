@@ -22,4 +22,7 @@ npx ng serve -o
 //compilar p produção
 ng build --configuration=production
 
+//caso queira migrar para nx
+https://nx.dev/migration/migration-angular
+
 
