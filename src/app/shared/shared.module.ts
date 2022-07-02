@@ -22,6 +22,9 @@ import { TableModule } from 'primeng/table';
 import { TabViewModule } from 'primeng/tabview';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
+import { PanelModule } from 'primeng/panel';
+import {ChartModule} from 'primeng/chart';
+
 
 @NgModule({
   declarations: [MessageComponent, Message2Component],
@@ -48,6 +51,8 @@ import { TooltipModule } from 'primeng/tooltip';
     ToastModule,
     ConfirmDialogModule,
     CheckboxModule,
+    PanelModule,
+    ChartModule,
 
     //sem o RouterModule os links href não funcionam
     RouterModule,
@@ -77,6 +82,8 @@ import { TooltipModule } from 'primeng/tooltip';
     ToastModule,
     ConfirmDialogModule,
     CheckboxModule,
+    PanelModule,
+    ChartModule,
   ],
 })
 export class SharedModule {}

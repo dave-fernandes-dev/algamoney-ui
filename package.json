@@ -1,7 +1,6 @@
 {
   "name": "algamoney-ui",
   "version": "1.0.0",
-
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -24,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@auth0/angular-jwt": "^5.0.2",
+    "chart.js": "^3.8.0",
     "express": "^4.18.1",
     "font-awesome": "^4.7.0",
     "path": "^0.12.7",
@@ -58,5 +58,8 @@
     "ignoreWords": [],
     "import": []
   },
-  "engines": { "node": "16.13.1", "npm": "8.8.0" }
+  "engines": {
+    "node": "16.13.1",
+    "npm": "8.8.0"
+  }
 }

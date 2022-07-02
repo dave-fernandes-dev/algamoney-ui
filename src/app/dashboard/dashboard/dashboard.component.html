@@ -1,1 +1,21 @@
-<p>dashboard works!</p>
+<div class="container grid font-bold">
+  <div class="col-12">
+    <h2>Lançamentos</h2>
+  </div>
+
+      <div class="col-12 md:col-6 p-fluid">
+        <p-panel header="Lançamentos por categoria">
+          <p-chart type="pie" [data]="pieChartData" [options]="options"></p-chart>
+        </p-panel>
+      </div>
+
+      <div class="col-12 md:col-6 p-fluid">
+        <p-panel header="Lançamentos por dia">
+          <p-chart type="line" [data]="lineChartData" [options]="options"></p-chart>
+        </p-panel>
+      </div>
+
+
+</div>
+
+
