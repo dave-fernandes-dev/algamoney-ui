@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     this.auth.login(usuario,senha)
     .then( () => {
       this.messageService.add({severity:'success', detail:'Autenticado com Sucesso!'});
-      this.router.navigate(['/lancamentos']);
+      this.router.navigate(['/dashboard']);
     })
      .catch(erro => this.errorHandler.handle(erro));
   }

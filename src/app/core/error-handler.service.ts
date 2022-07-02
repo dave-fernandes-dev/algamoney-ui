@@ -39,8 +39,9 @@ export class ErrorHandlerService {
       console.error('Ocorreu um erro', errorResponse);
 
     } else {
-      msg = 'Erro ao processar serviço remoto. Tente novamente.';
-      msgs.push({ severity:'info', detail: 'Aguarde 1 Minuto por favor q estou levantando ツ', life:10000, closable:true });
+      msg = 'Erro ao processar serviço remoto. Tente novamente mais tarde.';
+      msgs.push({ severity:'warn', detail: 'Aguarde 1 Minuto por favor q estou levantando ツ', life:10000, closable:true });
+      msgs.push({ severity:'info', detail: 'O Servidor Heroku(gratuito) dorme a cada 30min sem requisição ツ', life:10000, closable:true });
       console.error('Ocorreu um erro', errorResponse);
     }
 
