@@ -43,9 +43,12 @@ export class DashboardComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor() {
+    //aguarde
+   }
 
   ngOnInit(): void {
+    //aguarde
   }
 
 }
