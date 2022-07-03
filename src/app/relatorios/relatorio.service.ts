@@ -24,8 +24,7 @@ export class RelatoriosService {
       //.set('fim', moment(fim).format('YYYY-MM-DD'));
       .set('fim', this.datePipe.transform(fim, 'yyyy-MM-dd')!);
 
-    return this.http.get(`${this.lancamentosUrl}/relatorios/por-pessoa`,
-      { params, responseType: 'blob' })
+    return this.http.get(`${this.lancamentosUrl}/relatorios/por-pessoa`, { params, responseType: 'blob' })
       .toPromise();
   }
 
