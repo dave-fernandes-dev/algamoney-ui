@@ -34,10 +34,11 @@ export class DashboardService {
   private converterStringsParaDatas(dados: any[]) {
     for (const dado of dados) {
       //console.log("dado antes:"+dado.dia + " - "+ typeof dado.dia)
+
       //Evita bug na hora da edição, adiciona o timezone do usuário
       let offset = new Date().getTimezoneOffset() * 60000;
-
       dado.dia = new Date(new Date(dado.dia).getTime() + offset);
+
       //console.log("dado depois:"+dado.dia + " - "+ typeof dado.dia)
     }
   }
