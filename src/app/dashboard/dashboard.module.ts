@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SharedModule } from '../shared/shared.module';
@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SharedModule,
 
 
-  ]
+  ],
+  providers: [DecimalPipe]
 })
 export class DashboardModule { }
