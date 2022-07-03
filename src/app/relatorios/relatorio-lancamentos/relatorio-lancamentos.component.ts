@@ -15,6 +15,7 @@ export class RelatorioLancamentosComponent implements OnInit {
   constructor(private relatoriosService: RelatoriosService) { }
 
   ngOnInit() {
+    //temp
   }
 
   gerar() {

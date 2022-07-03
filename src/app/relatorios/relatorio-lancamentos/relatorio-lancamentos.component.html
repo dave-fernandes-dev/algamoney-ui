@@ -7,12 +7,14 @@
     <form #f="ngForm" (ngSubmit)="gerar()">
       <div class="col-12">
         <label>Vencimento</label>
-        <p-calendar dateFormat="dd/mm/yy" [required]=true [inputStyle]="{ 'width': '95px'}"
+        <p-calendar dateFormat="dd/mm/yy" [required]=true
+          [inputStyle]="{ 'width': '95px'}"
           [(ngModel)]="periodoInicio" name="periodoInicio"></p-calendar>
 
         <label> até </label>
 
-        <p-calendar dateFormat="dd/mm/yy" [required]=true [inputStyle]="{ 'width': '95px'}"
+        <p-calendar dateFormat="dd/mm/yy" [required]=true
+          [inputStyle]="{ 'width': '95px'}"
           [(ngModel)]="periodoFim" name="periodoFim"></p-calendar>
       </div>
 
