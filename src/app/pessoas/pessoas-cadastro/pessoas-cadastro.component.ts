@@ -16,6 +16,8 @@ export class PessoasCadastroComponent implements OnInit {
 
   pessoa = new Pessoa();
 
+  exibindoFormularioContato!: boolean;
+
   constructor(private errorHandler: ErrorHandlerService,
               private pessoaService: PessoaService,
               private messageService: MessageService,
@@ -32,6 +34,10 @@ export class PessoasCadastroComponent implements OnInit {
       this.loadPessoa(id);
       this.title.setTitle('Editar Pessoa');
     }
+  }
+
+  prepararNovoContato() {
+    this.exibindoFormularioContato = true;
   }
 
   private loadPessoa(id: any) {

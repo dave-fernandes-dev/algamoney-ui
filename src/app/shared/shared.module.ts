@@ -12,6 +12,8 @@ import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ChartModule } from 'primeng/chart';
+import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputMaskModule } from 'primeng/inputmask';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -23,7 +25,6 @@ import { TabViewModule } from 'primeng/tabview';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
 import { PanelModule } from 'primeng/panel';
-import {ChartModule} from 'primeng/chart';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import {ChartModule} from 'primeng/chart';
     FormsModule, ReactiveFormsModule,
     InputTextareaModule,
     SelectButtonModule,
+    DialogModule,
     DropdownModule,
     InputNumberModule,
     InputMaskModule,
@@ -58,32 +60,33 @@ import {ChartModule} from 'primeng/chart';
     RouterModule,
   ],
   exports: [
+    AccordionModule,
+    ButtonModule,
     MessageComponent,
     Message2Component,
     CommonModule,
     MessageModule,
     MessagesModule,
-    AccordionModule,
     TabViewModule,
     InputTextModule,
-    ButtonModule,
     TableModule,
     TooltipModule,
     CalendarModule,
     FormsModule, ReactiveFormsModule,
-    InputTextareaModule,
-    SelectButtonModule,
+    ChartModule,
+    DialogModule,
     DropdownModule,
+    HttpClientModule,
     InputNumberModule,
+    InputTextareaModule,
     InputMaskModule,
     MessagesModule,
     MessageModule,
-    HttpClientModule,
+    SelectButtonModule,
     ToastModule,
     ConfirmDialogModule,
     CheckboxModule,
     PanelModule,
-    ChartModule,
   ],
 })
 export class SharedModule {}
