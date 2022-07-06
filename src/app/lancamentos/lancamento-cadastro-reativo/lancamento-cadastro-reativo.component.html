@@ -70,7 +70,7 @@
     </div>
 
     <div class="col-12">
-      <button pButton type="submit" label="Salvar" [disabled]="form.invalid"></button>
+      <button pButton type="submit" label="Salvar" [disabled]="form.invalid || uploadEmAndamento"></button>
       <button pButton type="button" label="Novo" class="p-button-info" (click)="novo()"></button>
       <p-button label="Voltar para a Pesquisa" styleClass="p-button-link" routerLink="/lancamentos"></p-button>
     </div>
