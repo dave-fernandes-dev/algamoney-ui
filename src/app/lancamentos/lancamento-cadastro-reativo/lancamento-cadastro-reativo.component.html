@@ -54,8 +54,13 @@
       <div class="col-4 col-offset-8 md:col-2 md:col-offset-10 p-fluid">
         <p-fileUpload name="anexo" mode="basic" [auto]="true" [maxFileSize]="100000000"
           chooseLabel="Anexar" accept="image/*,application/*"
-          [headers]="uploadHeaders"  [url]="urlUploadAnexo" >
+          [headers]="uploadHeaders"  [url]="urlUploadAnexo">
         </p-fileUpload>
+      </div>
+
+      <div *ngIf="form.get('anexo')?.value" class="col-12 p-fluid" dir="rtl" >
+        <a target="_blank" pTooltip="Baixar Anexo" tooltipPosition="top"
+        [href]="form.get('urlAnexo')?.value"> {{ nomeAnexo }} </a>
       </div>
 
     </div>

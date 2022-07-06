@@ -6,7 +6,7 @@ import { PessoaService } from '../../pessoas/pessoa.service';
 import { Lancamento } from '../../core/model';
 import { LancamentoService } from '../lancamento.service';
 import { MessageService } from 'primeng/api';
-import { ActivatedRoute, Event, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -71,8 +71,9 @@ export class LancamentoCadastroReativoComponent implements OnInit {
           id: [null, Validators.required],
           nome: []
         }),
-        observacao: []
-
+        observacao: [],
+        anexo: [],
+        urlAnexo: []
     });
   }
 
@@ -142,12 +143,28 @@ export class LancamentoCadastroReativoComponent implements OnInit {
     return this.lancamentoService.uploadHeaders();
   }
 
-  antesUploadAnexo(event: any) {
-    event.xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem('token'));
-  }
-
   get urlUploadAnexo() {
     return this.lancamentoService.urlUploadAnexo();
+  }
+
+  aoTerminarUploadAnexo(event:any) {
+    const anexo = event.originalEvent.body;
+    console.log(anexo)
+    this.form.patchValue({
+      anexo: anexo.nome,
+      urlAnexo: anexo.url
+    });
+  }
+
+  get nomeAnexo() {
+    console.log('nomeAnexo')
+    const nome = this.form?.get('anexo')?.value;
+    console.log(nome)
+    if (nome) {
+      return nome.substring(nome.indexOf('_') + 1, nome.length);
+    }
+
+    return '';
   }
 
 }
