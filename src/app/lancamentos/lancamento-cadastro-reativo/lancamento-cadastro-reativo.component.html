@@ -56,7 +56,10 @@
           chooseLabel="Anexar" accept="image/*,application/*"
           [headers]="uploadHeaders"  [url]="urlUploadAnexo"
           (onUpload)="aoTerminarUploadAnexo($event)"
-          (onError)="erroUpload($event)"></p-fileUpload>
+          (onError)="erroUpload($event)"
+          [hidden]="uploadEmAndamento"></p-fileUpload>
+
+          <p-progressSpinner [hidden]="!uploadEmAndamento" [style]="{ width: '25px', height: '25px' }"></p-progressSpinner>
       </div>
 
       <div *ngIf="form.get('anexo')?.value" class="col-12 p-fluid" dir="rtl" >

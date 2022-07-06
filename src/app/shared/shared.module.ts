@@ -25,6 +25,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
 import { PanelModule } from 'primeng/panel';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [MessageComponent, Message2Component],
@@ -55,6 +56,7 @@ import { PanelModule } from 'primeng/panel';
     ConfirmDialogModule,
     CheckboxModule,
     PanelModule,
+    ProgressSpinnerModule,
     ChartModule,
 
   ],
@@ -66,6 +68,8 @@ import { PanelModule } from 'primeng/panel';
     MessagesModule,
     TabViewModule,
     InputTextModule,
+    ConfirmDialogModule,
+    CheckboxModule,
     CalendarModule,
     FileUploadModule,
     FormsModule,
@@ -85,9 +89,8 @@ import { PanelModule } from 'primeng/panel';
     ToastModule,
     TableModule,
     TooltipModule,
-    ConfirmDialogModule,
-    CheckboxModule,
     PanelModule,
+    ProgressSpinnerModule,
 
   ],
 })

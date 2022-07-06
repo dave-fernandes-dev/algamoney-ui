@@ -20,6 +20,7 @@ export class LancamentoCadastroReativoComponent implements OnInit {
   pessoas: any[] = [];
   //lancamento = new Lancamento();
   form!: FormGroup;
+  uploadEmAndamento = false;
 
   tipos = [
     { label: 'Receita', value: 'RECEITA' },
@@ -144,19 +145,19 @@ export class LancamentoCadastroReativoComponent implements OnInit {
   }
 
   get urlUploadAnexo() {
+    this.uploadEmAndamento = true;
     return this.lancamentoService.urlUploadAnexo();
   }
 
   aoTerminarUploadAnexo(event:any) {
     const anexo = event.originalEvent.body;
     console.log(anexo)
-    this.form.patchValue({
-      anexo: anexo.nome,
-      urlAnexo: anexo.url
-    });
+    this.form.patchValue({ anexo: anexo.nome,  urlAnexo: anexo.url });
+    this.uploadEmAndamento = false;
   }
 
-  erroUpload(event: any) {
+  erroUpload(_event: any) {
+    this.uploadEmAndamento = false;
     this.messageService.add({severity:'error', detail:'Erro ao tentar enviar anexo!'});
   }
 
