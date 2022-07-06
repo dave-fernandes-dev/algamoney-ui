@@ -110,4 +110,14 @@ export class LancamentosCadastroComponent implements OnInit {
     this.router.navigate(['/lancamentos/novo'])
 
   }
+
+  get uploadHeaders() {
+    return this.lancamentoService.uploadHeaders();
+  }
+
+  get urlUploadAnexo() {
+    return this.lancamentoService.urlUploadAnexo();
+  }
+
+
 }

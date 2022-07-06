@@ -6,7 +6,7 @@ import { PessoaService } from '../../pessoas/pessoa.service';
 import { Lancamento } from '../../core/model';
 import { LancamentoService } from '../lancamento.service';
 import { MessageService } from 'primeng/api';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Event, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -137,4 +137,17 @@ export class LancamentoCadastroReativoComponent implements OnInit {
     this.form.reset(new Lancamento());
     this.router.navigate(['/lancamentos/novo'])
   }
+
+  get uploadHeaders() {
+    return this.lancamentoService.uploadHeaders();
+  }
+
+  antesUploadAnexo(event: any) {
+    event.xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem('token'));
+  }
+
+  get urlUploadAnexo() {
+    return this.lancamentoService.urlUploadAnexo();
+  }
+
 }

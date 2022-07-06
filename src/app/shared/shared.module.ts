@@ -5,8 +5,8 @@ import { Message2Component } from './message/message2.component';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { HttpClientModule } from '@angular/common/http';
+import { FileUploadModule } from 'primeng/fileupload';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
@@ -26,7 +26,6 @@ import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
 import { PanelModule } from 'primeng/panel';
 
-
 @NgModule({
   declarations: [MessageComponent, Message2Component],
   imports: [
@@ -40,7 +39,9 @@ import { PanelModule } from 'primeng/panel';
     TableModule,
     TooltipModule,
     CalendarModule,
-    FormsModule, ReactiveFormsModule,
+    FileUploadModule,
+    FormsModule,
+    ReactiveFormsModule,
     InputTextareaModule,
     SelectButtonModule,
     DialogModule,
@@ -56,8 +57,6 @@ import { PanelModule } from 'primeng/panel';
     PanelModule,
     ChartModule,
 
-    //sem o RouterModule os links href não funcionam
-    RouterModule,
   ],
   exports: [
     AccordionModule,
@@ -68,7 +67,9 @@ import { PanelModule } from 'primeng/panel';
     TabViewModule,
     InputTextModule,
     CalendarModule,
-    FormsModule, ReactiveFormsModule,
+    FileUploadModule,
+    FormsModule,
+    ReactiveFormsModule,
     ChartModule,
     DialogModule,
     DropdownModule,
@@ -87,6 +88,7 @@ import { PanelModule } from 'primeng/panel';
     ConfirmDialogModule,
     CheckboxModule,
     PanelModule,
+
   ],
 })
-export class SharedModule {}
+export class SharedModule { }

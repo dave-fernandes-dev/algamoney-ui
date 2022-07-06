@@ -50,6 +50,14 @@
         <label>Observação</label>
         <textarea [rows]="3" pInputTextarea [autoResize]="true" formControlName="observacao" name="observacao"></textarea>
       </div>
+
+      <div class="col-4 col-offset-8 md:col-2 md:col-offset-10 p-fluid">
+        <p-fileUpload name="anexo" mode="basic" [auto]="true" [maxFileSize]="100000000"
+          chooseLabel="Anexar" accept="image/*,application/*"
+          [headers]="uploadHeaders"  [url]="urlUploadAnexo" >
+        </p-fileUpload>
+      </div>
+
     </div>
 
     <div class="col-12">
