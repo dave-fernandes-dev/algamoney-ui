@@ -161,6 +161,13 @@ export class LancamentoCadastroReativoComponent implements OnInit {
     this.messageService.add({severity:'error', detail:'Erro ao tentar enviar anexo!'});
   }
 
+  removerAnexo() {
+    this.form.patchValue({
+      anexo: null,
+      urlAnexo: null
+    });
+  }
+
   get nomeAnexo() {
     console.log('nomeAnexo')
     const nome = this.form?.get('anexo')?.value;
