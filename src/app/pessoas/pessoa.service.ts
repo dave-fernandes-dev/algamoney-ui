@@ -91,7 +91,7 @@ export class PessoaService {
       .then((response:any) => { return response });
   }
 
-  pesquisarCidades(estado: string): Promise<Cidade[]> {
+  pesquisarCidades(estado: number): Promise<Cidade[]> {
     let params = new HttpParams().set('estado', estado);
 
     return this.http.get(this.cidadesUrl, { params })
