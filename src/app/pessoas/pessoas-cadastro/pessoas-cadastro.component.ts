@@ -15,6 +15,8 @@ import { PessoaService } from '../pessoa.service';
 export class PessoasCadastroComponent implements OnInit {
 
   pessoa = new Pessoa();
+  estados!: any[];
+  cidades!: any[];
   exibindoFormularioContato!: boolean;
 
   constructor(private errorHandler: ErrorHandlerService,
@@ -26,6 +28,8 @@ export class PessoasCadastroComponent implements OnInit {
     ) {}
   ngOnInit(): void {
     this.title.setTitle('Novo Pessoa');
+
+    this.carregarEstados();
 
     const id =this.route.snapshot.params['id'];
 
@@ -39,6 +43,13 @@ export class PessoasCadastroComponent implements OnInit {
     this.pessoaService.buscarPorCodigo(id)
       .then(resultado => this.pessoa = resultado)
       .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  carregarEstados() {
+    this.pessoaService.listarEstados().then(lista => {
+      this.estados = lista.map(uf => ({ label: uf.nome, value: uf.id }));
+    })
+    .catch(erro => this.errorHandler.handle(erro));
   }
 
   editando(){

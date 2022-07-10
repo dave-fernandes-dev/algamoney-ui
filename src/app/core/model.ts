@@ -23,9 +23,9 @@ export class Contato {
 export class Endereco {
   bairro?: string;
   cep?: string;
-  cidade?: Cidade;
+  cidade? = new Cidade();
   complemento?: string;
-  estado?: Estado;
+  estado? = new Estado();
   logradouro?: string;
   numero?: string;
 }
