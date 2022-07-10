@@ -23,15 +23,28 @@ export class Contato {
 export class Endereco {
   bairro?: string;
   cep?: string;
-  cidade?: string;
+  cidade?: Cidade;
   complemento?: string;
-  estado?: string;
-  logradouro!: string;
+  estado?: Estado;
+  logradouro?: string;
   numero?: string;
 }
 
 export class Categoria {
   id?: number;
+  nome?: string;
+
+}
+
+export class Cidade {
+  id?: number;
+  nome?: string;
+  estado? = new Estado()
+}
+
+export class Estado {
+  id?: number;
+  nome?: string;
 }
 
 export class Lancamento {
