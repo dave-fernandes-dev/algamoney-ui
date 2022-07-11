@@ -35,7 +35,7 @@
           <td>{{ pessoa.id }}</td>
           <td>{{ pessoa.nome }}</td>
           <td>{{ pessoa.endereco.cidade?.nome | lowercase }}</td>
-          <td>{{ pessoa.endereco.estado?.nome  | uppercase}}</td>
+          <td>{{ pessoa.endereco.cidade?.estado?.nome  | uppercase}}</td>
           <td class="font-bold" >
 
             <a href="javascript:;" [pTooltip]="pessoa.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top" [ngStyle]="{ color: pessoa.ativo === true ? 'green' : 'red'}" (click)="alternarStatus(pessoa)">
