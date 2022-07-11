@@ -63,6 +63,11 @@
       </div>
 
       <div *ngIf="form.get('anexo')?.value" class="col-12 p-fluid" dir="rtl" >
+
+        <button pButton type="button" class="ui-button-danger" icon="fa-close" pTooltip="Remover anexo" tooltipPosition="top"
+        (click)="removerAnexo()">
+      </button>
+
         <a target="_blank" pTooltip="Baixar Anexo" tooltipPosition="top"
         [href]="form.get('urlAnexo')?.value"> {{ nomeAnexo }} </a>
       </div>

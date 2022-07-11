@@ -15,9 +15,9 @@ import { PessoaService } from '../pessoa.service';
 export class PessoasCadastroComponent implements OnInit {
 
   pessoa = new Pessoa();
-  estados!: any[];
+  estados?: any[];
   estadoSelecionado: any;
-  cidades!: any[];
+  cidades?: any[];
   exibindoFormularioContato!: boolean;
 
   constructor(private errorHandler: ErrorHandlerService,
@@ -42,7 +42,14 @@ export class PessoasCadastroComponent implements OnInit {
 
   private loadPessoa(id: any) {
     this.pessoaService.buscarPorCodigo(id)
-      .then(resultado => this.pessoa = resultado)
+      .then(resultado => { this.pessoa = resultado;
+
+        this.estadoSelecionado = (this.pessoa.endereco.cidade) ? this.pessoa.endereco?.cidade?.estado?.id : null;
+
+        if (this.estadoSelecionado) {
+          this.carregarCidades();
+        }
+      })
       .catch(erro => this.errorHandler.handle(erro));
   }
 
@@ -54,11 +61,17 @@ export class PessoasCadastroComponent implements OnInit {
   }
 
   carregarCidades() {
-    this.pessoaService.pesquisarCidades(this.estadoSelecionado).then(lista => {
-      this.cidades = lista.map(c => ({ label: c.nome, value: c.id }));
-    })
-    .catch(erro => this.errorHandler.handle(erro));
+    this.pessoaService.pesquisarCidades(this.estadoSelecionado)
+      .then(cidades => { this.cidades = cidades.map(c => ({ label: c.nome, value: c.id }));
+
+                        if (this.estadoSelecionado !== this.pessoa.endereco?.cidade?.estado?.id) {
+                          this.pessoa.endereco.cidade.id = null;
+                        }
+                      })
+      .catch(erro => this.errorHandler.handle(erro));
   }
+
+
 
   editando(){
     return Boolean(this.pessoa.id);

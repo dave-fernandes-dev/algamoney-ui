@@ -3,7 +3,7 @@ export class Pessoa {
   nome?: string;
   ativo?: boolean = true;
   endereco = new Endereco();
-  contatos = new Array<Contato>();
+  contatos? = new Array<Contato>();
 }
 
 export class Contato {
@@ -23,9 +23,8 @@ export class Contato {
 export class Endereco {
   bairro?: string;
   cep?: string;
-  cidade? = new Cidade();
+  cidade = new Cidade();
   complemento?: string;
-  estado? = new Estado();
   logradouro?: string;
   numero?: string;
 }
@@ -37,7 +36,7 @@ export class Categoria {
 }
 
 export class Cidade {
-  id?: number;
+  id?: any;
   nome?: string;
   estado? = new Estado()
 }
@@ -55,8 +54,8 @@ export class Lancamento {
   dataPagamento?: Date;
   valor?: number;
   observacao?: string;
-  pessoa = new Pessoa();
-  categoria = new Categoria();
+  pessoa? = new Pessoa();
+  categoria? = new Categoria();
   anexo?: string;
   urlAnexo?: string
 }

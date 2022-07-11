@@ -36,12 +36,12 @@
 
       <div class="col-12 md:col-6 p-fluid">
         <label>Categoria {{categoria.value}}</label>
-        <p-dropdown [options]="categorias" placeholder="Selecione" [filter]="true" #categoria [(ngModel)]="lancamento.categoria.id" name="categoria"></p-dropdown>
+        <p-dropdown [options]="categorias" placeholder="Selecione" [filter]="true" #categoria [(ngModel)]="lancamento.categoria!.id" name="categoria"></p-dropdown>
       </div>
 
       <div class="col-12 md:col-6 p-fluid">
         <label>Pessoa</label>
-        <p-dropdown [options]="pessoas" placeholder="Selecione" [filter]="true" [(ngModel)]="lancamento.pessoa.id" name="pessoa"></p-dropdown>
+        <p-dropdown [options]="pessoas" placeholder="Selecione" [filter]="true" [(ngModel)]="lancamento.pessoa!.id" name="pessoa"></p-dropdown>
       </div>
 
       <div class="col-12 p-fluid">

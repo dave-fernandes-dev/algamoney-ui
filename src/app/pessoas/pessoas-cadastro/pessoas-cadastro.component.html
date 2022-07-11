@@ -44,14 +44,19 @@
 
         <p-dropdown placeholder="Selecione..." autoWidth="false" [filter]="true" [options]="estados"
           [(ngModel)]="estadoSelecionado" name="estadoSelecionado"
-          (onChange)="carregarCidades()">
+          (onChange)="carregarCidades()" #estado="ngModel" required>
         </p-dropdown>
+
+          <app-message [control]="estado" error="required" text="Informe o estado"></app-message>
       </div>
 
       <div class="col-12 md:col-6 p-fluid">
         <label>Cidade</label>
-        <p-dropdown placeholder="Selecione..." autoWidth="false" [filter]="true" [options]="cidades">
-        </p-dropdown>
+        <p-dropdown placeholder="Selecione..." autoWidth="false" [filter]="true" [options]="cidades"
+         [(ngModel)]="pessoa.endereco.cidade.id" name="cidade" #cidade="ngModel" required
+        [disabled]="!estadoSelecionado"></p-dropdown>
+
+      <app-message [control]="cidade" error="required" text="Informe a cidade"></app-message>
       </div>
 
 

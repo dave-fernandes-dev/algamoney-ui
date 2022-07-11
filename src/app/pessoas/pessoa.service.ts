@@ -17,7 +17,7 @@ export class PessoaService {
   pessoasUrl = environment.apiUrl+'/pessoas';
   cidadesUrl = environment.apiUrl+'/cidades';
   estadosUrl = environment.apiUrl+'/estados';
-  errorHandler: any;
+  //errorHandler: any;
 
 
   constructor(private http: HttpClient) {}
