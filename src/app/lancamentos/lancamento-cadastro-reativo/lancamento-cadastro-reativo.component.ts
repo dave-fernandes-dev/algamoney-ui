@@ -169,9 +169,9 @@ export class LancamentoCadastroReativoComponent implements OnInit {
   }
 
   get nomeAnexo() {
-    console.log('nomeAnexo')
+    //console.log('nomeAnexo')
     const nome = this.form?.get('anexo')?.value;
-    console.log(nome)
+    //console.log(nome)
     if (nome) {
       return nome.substring(nome.indexOf('_') + 1, nome.length);
     }
