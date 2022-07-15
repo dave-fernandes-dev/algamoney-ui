@@ -51,21 +51,23 @@
         <textarea [rows]="3" pInputTextarea [autoResize]="true" formControlName="observacao" name="observacao"></textarea>
       </div>
 
-      <div class="col-4 col-offset-8 md:col-2 md:col-offset-10 p-fluid">
-        <p-fileUpload name="anexo" mode="basic" [auto]="true" [maxFileSize]="100000000"
+      <div *ngIf="!form.get('anexo')?.value" class="col-4 col-offset-8 md:col-2 md:col-offset-10 p-fluid">
+        <p-fileUpload name="anexo" mode="basic" [auto]="true" [maxFileSize]="1048576"
           chooseLabel="Anexar" accept="image/*,application/*"
-          [headers]="uploadHeaders"  [url]="urlUploadAnexo"
+          [url]="urlUploadAnexo"
+          [headers]="uploadHeaders"
+          (onProgress)="antesUploadAnexo($event)"
           (onUpload)="aoTerminarUploadAnexo($event)"
           (onError)="erroUpload($event)"
-
+          [hidden]="uploadEmAndamento"
           ></p-fileUpload>
 
-          <!--p-progressSpinner [hidden]="!uploadEmAndamento" [style]="{ width: '25px', height: '25px' }"></p-progressSpinner-->
+          <p-progressSpinner [hidden]="!uploadEmAndamento" [style]="{ width: '25px', height: '25px' }"></p-progressSpinner>
       </div>
 
       <div *ngIf="form.get('anexo')?.value" class="col-12 p-fluid" dir="rtl" >
 
-        <button pButton type="button" class="ui-button-danger" icon="fa-close" pTooltip="Remover anexo" tooltipPosition="top"
+        <button pButton type="button" class="ui-button-danger" icon="pi pi-trash" pTooltip="Remover anexo" tooltipPosition="top"
         (click)="removerAnexo()">
       </button>
 
@@ -85,7 +87,8 @@
     <div>
       <!--
       -->
-      <pre> {{form.value| json}}</pre>
+      <pre> {{uploadEmAndamento | json}}</pre>
+      <pre> {{form.value | json}}</pre>
     </div>
 
 
