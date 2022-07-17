@@ -17,8 +17,10 @@
   </div>
 
   <div class="col-12">
-    <p-table [value]="pessoas" [responsive]="true" [alwaysShowPaginator]="true" styleClass="p-datatable-gridlines p-datatable-striped"
-    [paginator]="true" [rows]="filtro.itensPorPagina" [rowsPerPageOptions]="[2, 5, 10, 20, 100]" lazy="true" [totalRecords]="totalRegistros" (onLazyLoad)="aoMudarPagina($event)" #tabela>
+    <p-table [value]="pessoas" [alwaysShowPaginator]="true" [paginator]="true" [rows]="filtro.itensPorPagina"
+      styleClass="p-datatable-gridlines p-datatable-striped p-datatable-sm" responsiveLayout="scroll" [responsive]="true"
+       [rowsPerPageOptions]="[2, 5, 10, 20, 100]" lazy="true" [totalRecords]="totalRegistros"
+       (onLazyLoad)="aoMudarPagina($event)" #tabela>
 
       <ng-template pTemplate="header">
         <tr>
