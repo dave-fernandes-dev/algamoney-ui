@@ -84,11 +84,11 @@ export class DashboardComponent implements OnInit {
         if (dado.dia.getDate() === dia) {
           total = dado.total;
 
-          console.log("type1: "+typeof dado.dia)
-          console.log("dia: "+dado.dia)
-          console.log("type2: "+typeof dia)
-          console.log("dia: "+dia)
-          console.log(dado.dia.getDate() === dia )
+          // console.log("type1: "+typeof dado.dia)
+          // console.log("dia: "+dado.dia)
+          // console.log("type2: "+typeof dia)
+          // console.log("dia: "+dia)
+          // console.log(dado.dia.getDate() === dia )
 
           break;
         }

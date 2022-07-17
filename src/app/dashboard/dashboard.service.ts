@@ -23,7 +23,7 @@ export class DashboardService {
     return this.http.get(`${this.lancamentosUrl}/estatisticas/por-dia`)
       .toPromise()
       .then((response : any) => {
-        console.log(response);
+        //console.log(response);
         const dados = response;
         this.converterStringsParaDatas(dados);
 

@@ -26,12 +26,12 @@ export class AuthService {
     .toPromise()
     .then((response:any) => {
       this.armazenarToken(response['access_token']);
-      console.log(response);
+      //console.log(response);
     })
     .catch(response => {
       if (response.status === 400) {
         if (response.error.error ==='invalid_grant') {
-          console.log(response);
+          //console.log(response);
           return Promise.reject('Usuário ou Senha Inválida!');
         }
       }
@@ -57,7 +57,7 @@ export class AuthService {
     .toPromise()
     .then((response:any) => {
       this.armazenarToken(response['access_token']);
-          console.log('novo access token criado', response);
+          //console.log('novo access token criado', response);
           //return Promise.resolve(response);
     })
     .catch(response => {

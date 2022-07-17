@@ -78,7 +78,7 @@ export class LancamentoCadastroReativoComponent implements OnInit {
   erroUpload(_event: any) {
     this.uploadEmAndamento = false;
     this.messageService.add({severity:'error', detail:'Erro ao tentar enviar anexo!'});
-    console.log(_event)
+    //console.log(_event)
 
   }
 
